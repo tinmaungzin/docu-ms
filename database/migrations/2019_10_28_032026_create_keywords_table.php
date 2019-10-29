@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDocumentsTable extends Migration
+class CreateKeywordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateDocumentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('documents', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->text('title');
-            $table->text('abstract');
-            $table->text('filename');
+        Schema::create('keywords', function (Blueprint $table) {
+            $table->increments('id');
+            $table->char('name',120);
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateDocumentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('documents');
+        Schema::dropIfExists('keywords');
     }
 }
