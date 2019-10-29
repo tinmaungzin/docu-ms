@@ -28,6 +28,6 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::guard('stu')->logout();
-        return redirect('documents');
+        return redirect('documents-guest');
     }
 }

@@ -17,8 +17,10 @@ use Illuminate\Support\Facades\Route;
 
     Route::resource('students','StudentController')->except('destroy');
     Route::get('documents','DocumentController@index')->name('documents.index');
+    Route::get('documents-guest','DocumentController@guestIndex')->name('documents.guestIndex');
     Route::get('documents/create','DocumentController@create')->name('documents.create');
     Route::get('documents/{document}','DocumentController@show')->name('documents.show');
+    Route::get('documents-guest/{document}','DocumentController@guestShow')->name('documents.guestShow');
 
     Route::post('documents/store','DocumentController@store')->name('documents.store');
     Route::get('file/{name}','FileController@downloadFile')->name('file.download');

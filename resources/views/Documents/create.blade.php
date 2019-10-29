@@ -1,14 +1,15 @@
 <html>
     <body>
     <header>
-        @if(\Illuminate\Support\Facades\Auth::user())
-            <a href="{{route('documents.create')}}">Upload</a>
-            <a href="">Edit Profile</a>
-            <a href="{{route('login.logout')}}">Logout</a>
-        @else
-            <a href="">Login</a>
-            <a href="{{route('students.create')}}">Register</a>
-        @endif
+
+
+        @auth
+            @include('layouts.auth_nav')
+        @endauth
+
+        @guest
+            @include('layouts.guest_nav')
+        @endguest
     </header>
         <form action="{{route('documents.store')}}" method="post" enctype="multipart/form-data">
             @csrf

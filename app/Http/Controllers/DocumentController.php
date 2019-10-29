@@ -14,10 +14,16 @@ class DocumentController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:stu',['only' => ['create','store']]);
+        $this->middleware('auth:stu',['except' => ['guestIndex','guestShow']]);
     }
 
     public function index()
+    {
+        $documents = Document::paginate(8);
+        return view('Documents.index', compact('documents'));
+    }
+
+    public function guestIndex()
     {
         $documents = Document::paginate(8);
         return view('Documents.index', compact('documents'));
@@ -38,7 +44,7 @@ class DocumentController extends Controller
         $data = $request->except('pdf_file');
         $data['filename'] = $this->saveFile($request->file('pdf_file'));
         Document::create($data);
-        return redirect('documents');
+        return redirect(route('documents.index'));
     }
 
     public function saveFile($file)
@@ -51,6 +57,11 @@ class DocumentController extends Controller
     }
 
     public function show(Document $document)
+    {
+        $owner = Student::where('id',$document->owner_id)->firstOrFail();
+        return view('Documents.show',compact('document','owner'));
+    }
+    public function guestShow(Document $document)
     {
         $owner = Student::where('id',$document->owner_id)->firstOrFail();
         return view('Documents.show',compact('document','owner'));

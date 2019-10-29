@@ -28,7 +28,7 @@ class StudentRequest extends FormRequest
             'school_mail'=>'required|email|unique:students',
             'password'=> 'required',
             'confirm_password'=>'required|same:password',
-            'student_id' => 'required',
+            'student_id' => 'required|unique:students',
             'roll_no' => 'required'
         ];
     }

@@ -1,10 +1,13 @@
 <html>
 <body>
 <header>
-    <a href="">Login</a>
-    <a href="{{route('students.create')}}">Register</a>
-    <a href="{{route('documents.create')}}">Upload</a>
-    <a href="">Edit Profile</a>
+    @auth
+        @include('layouts.auth_nav')
+    @endauth
+
+    @guest
+        @include('layouts.guest_nav')
+    @endguest
 </header>
 
 <p>{{$student->name}}</p>
@@ -14,7 +17,13 @@
 <ul>
     @foreach($documents as $document)
         <li>
-            <a href="/documents/{{$document->id}}">{{$document->title}}</a>
+
+            @auth
+                <a href="documents/{{$document->id}}">{{$document->title}}</a>
+            @endauth
+            @guest
+                <a href="documents-guest/{{$document->id}}">{{$document->title}}</a>
+            @endguest
 
         </li>
         @endforeach

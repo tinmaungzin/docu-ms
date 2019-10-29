@@ -12,7 +12,6 @@ class StudentController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:stu',['except' => ['create','store']]);
         $this->middleware('guest:stu',['only' => ['create','store']]);
     }
 
@@ -48,7 +47,7 @@ class StudentController extends Controller
         $data = $request->except('password','confirm_password');
         $data['password'] = bcrypt($request['password']);
         Student::create($data);
-        return redirect('students');
+        return redirect(route('login.form'));
     }
 
     /**
@@ -72,7 +71,8 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        return view('Students.edit', compact('student'));
+        $majors = Major::all();
+        return view('Students.edit', compact('student','majors'));
     }
 
     /**
