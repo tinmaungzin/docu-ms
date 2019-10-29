@@ -17,4 +17,9 @@ class Document extends Model
     {
         return $this->belongsTo(Student::class);
     }
+
+    public function document_histories()
+    {
+        return $this->hasMany(DocumentHistory::class);
+    }
 }

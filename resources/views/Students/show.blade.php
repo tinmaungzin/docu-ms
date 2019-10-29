@@ -19,10 +19,10 @@
         <li>
 
             @auth
-                <a href="documents/{{$document->id}}">{{$document->title}}</a>
+                <a href="{{route('documents.show',['document' => $document->id])}}">{{$document->title}}</a>
             @endauth
             @guest
-                <a href="documents-guest/{{$document->id}}">{{$document->title}}</a>
+                <a href="{{route('documents.guestShow',['document' => $document->id])}}">{{$document->title}}</a>
             @endguest
 
         </li>

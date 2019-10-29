@@ -13,6 +13,7 @@ class StudentController extends Controller
     public function __construct()
     {
         $this->middleware('guest:stu',['only' => ['create','store']]);
+        $this->middleware('auth:stu',['only' => ['edit','update','show']]);
     }
 
     /**
@@ -57,6 +58,12 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Student $student)
+    {
+        $documents = $student->documents->all();
+//        dd($documents);
+        return view('Students.show', compact('student', 'documents'));
+    }
+    public function guestShow(Student $student)
     {
         $documents = $student->documents->all();
 //        dd($documents);
