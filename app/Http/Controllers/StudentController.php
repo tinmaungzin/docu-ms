@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StudentRequest;
+use App\Models\Document;
 use App\Models\Major;
 use App\Models\Student;
 use Illuminate\Http\Request;
@@ -78,8 +79,18 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
+
+        $bookmarkeds= [];
+        if($student->bookmarks){
+            $bookmarks = $student->bookmarks;
+            foreach($bookmarks as $bookmark){
+                $bookmarkeds = Document::where('id', $bookmark->id)->get();
+            }
+        }
+
+//        dd($bookmarkeds);
         $majors = Major::all();
-        return view('Students.edit', compact('student','majors'));
+        return view('Students.edit', compact('student','majors','bookmarkeds'));
     }
 
     /**

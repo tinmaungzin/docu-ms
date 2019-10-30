@@ -26,6 +26,15 @@
         @endif
 
     @endauth
+@auth
+    @if(\Illuminate\Support\Facades\Auth::user()->id!= $document->owner_id)
+        @if($bookmark->count()>0)
+        <a href="{{route('bookmark.index',['student' => \Illuminate\Support\Facades\Auth::user()->id ,'document' => $document->id])}}">UnBOOkmark</a>
+            @else
+            <a href="{{route('bookmark.index',['student' => \Illuminate\Support\Facades\Auth::user()->id ,'document' => $document->id])}}">Bookmark</a>
+                @endif
+        @endif
+    @endauth
 
 
 @auth

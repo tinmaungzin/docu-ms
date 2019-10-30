@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bookmark;
 use App\Models\DocumentHistory;
 use App\Http\Requests\DocumentRequest;
 use App\Models\Document;
@@ -61,11 +62,18 @@ class DocumentController extends Controller
 
     public function show(Document $document)
     {
+//        $bookmark = 0;
+
         $id = Auth::user()->id;
         $student = Student::find($id);
         $owner = Student::where('id',$document->owner_id)->firstOrFail();
         $histories = $document->document_histories;
-        return view('Documents.show',compact('document','owner','student','histories'));
+
+//        if($student->bookmarks->where('document_id' , $document->id))
+        $bookmark = $student->bookmarks->where('document_id' , $document->id);
+//        dd($bookmark);
+
+        return view('Documents.show',compact('document','owner','student','histories','bookmark'));
     }
 
     public function guestShow(Document $document)

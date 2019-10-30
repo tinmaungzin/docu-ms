@@ -20,5 +20,10 @@
 
     <button type="submit">Update</button>
 </form>
+
+<p>Bookmark</p>
+@foreach($bookmarkeds as $bookmarked)
+    <a href="{{route('documents.show',['document' => $bookmarked->id])}}">{{$bookmarked->title}}</a>
+    @endforeach
 </body>
 </html>

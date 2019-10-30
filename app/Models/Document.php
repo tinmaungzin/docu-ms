@@ -22,4 +22,9 @@ class Document extends Model
     {
         return $this->hasMany(DocumentHistory::class);
     }
+
+    public function bookmarks()
+    {
+        return $this->hasMany(Bookmark::class);
+    }
 }

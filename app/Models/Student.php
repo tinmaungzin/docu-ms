@@ -17,4 +17,9 @@ class Student extends Authenticatable
     {
         return $this->hasMany(Document::class,'owner_id');
     }
+
+    public function bookmarks()
+    {
+        return $this->hasMany(Bookmark::class);
+    }
 }

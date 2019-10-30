@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('documents/{document}','DocumentController@show')->name('documents.show');
     Route::get('documents-guest/{document}','DocumentController@guestShow')->name('documents.guestShow');
     Route::get('students-guest/{student}','StudentController@guestShow')->name('students.guestShow');
+    Route::get('bookmark/{student}/{document}','BookmarkController@index')->name('bookmark.index');
     Route::post('documents','DocumentController@store')->name('documents.store');
     Route::get('file/{name}','FileController@downloadFile')->name('file.download');
     Route::get('login','LoginController@showLoginForm')->name('login.form');
