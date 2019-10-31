@@ -1,0 +1,9 @@
+[submodule "scripts/keywords-extraction-from-abstract"]
+	path = scripts/keywords-extraction-from-abstract
+	url = git@github.com:May-Thae-Sue/keywords-extraction-from-abstract.git
+[submodule "scripts/PDF-watermarking"]
+	path = scripts/PDF-watermarking
+	url = git@github.com:May-Thae-Sue/PDF-watermarking.git
+[submodule "scripts/Book-Recommendation"]
+	path = scripts/Book-Recommendation
+	url = git@github.com:TinKoThetWin/Book-Recommendation.git
