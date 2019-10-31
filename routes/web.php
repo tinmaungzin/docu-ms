@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Test Routes
+Route::get('/test-script', 'Test\TestController@testScript');
