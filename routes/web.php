@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +20,24 @@ Route::get('/', function () {
 
 //Test Routes
 Route::get('/test-script', 'Test\TestController@testScript');
+
+Route::resource('students', 'StudentController')->except('destroy');
+Route::get('documents', 'DocumentController@index')->name('documents.index');
+Route::get('documents-guest', 'DocumentController@guestIndex')->name('documents.guestIndex');
+Route::get('documents/create', 'DocumentController@create')->name('documents.create');
+Route::get('documents/{document}/edit', 'DocumentController@edit')->name('documents.edit');
+Route::post('documents/{document}', 'DocumentController@update')->name('documents.update');
+Route::get('documents/{document}', 'DocumentController@show')->name('documents.show');
+Route::get('documents-guest/{document}', 'DocumentController@guestShow')->name('documents.guestShow');
+Route::get('students-guest/{student}', 'StudentController@guestShow')->name('students.guestShow');
+Route::get('bookmark/{student}/{document}', 'BookmarkController@index')->name('bookmark.index');
+Route::post('documents', 'DocumentController@store')->name('documents.store');
+Route::get('file/{name}', 'FileController@downloadFile')->name('file.download');
+Route::get('login', 'LoginController@showLoginForm')->name('login.form');
+Route::post('login', 'LoginController@login')->name('login.login');
+Route::match(['get', 'post'], 'logout', 'LoginController@logout')->name('login.logout');
+
+
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');

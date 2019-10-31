@@ -14,7 +14,15 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->char('name', 120);
+            $table->char('school_mail',120)->unique();
+            $table->char('password',120);
+            $table->char('student_id',120);
+            $table->unsignedInteger('major_id');
+            $table->foreign('major_id')->references('id')->on('majors')
+                ->onDelete('cascade');
+            $table->char('roll_no',120);
             $table->timestamps();
         });
     }
