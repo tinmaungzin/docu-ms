@@ -7,3 +7,6 @@
 [submodule "scripts/Book-Recommendation"]
 	path = scripts/Book-Recommendation
 	url = git@github.com:TinKoThetWin/Book-Recommendation.git
+[submodule "laradock"]
+	path = laradock
+	url = git@github.com:zawlinnnaing/laradock.git
