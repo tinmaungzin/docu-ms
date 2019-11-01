@@ -30,8 +30,10 @@
             <input type="file" name="pdf_file">
             <span>{{$errors->first('pdf_file')}}</span>
 
-            <input type="text" name="author_name" placeholder="author_name">
+            <input type="text" name="author_name" placeholder="author name">
             <span>{{$errors->first('author_name')}}</span>
+            <input type="text" name="author_mail" placeholder="author email">
+            <span>{{$errors->first('author_mail')}}</span>
 
             <button type="submit">Upload</button>
         </form>

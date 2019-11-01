@@ -14,13 +14,12 @@ class CreateDocumentHistoriesTable extends Migration
     public function up()
     {
         Schema::create('document_histories', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->unsignedInteger('document_id');
             $table->foreign('document_id')->references('id')->on('documents');
             $table->char('title',200);
             $table->text('abstract');
             $table->char('filename',120);
-            $table->char('author_name',120);
             $table->unsignedInteger('owner_id');
             $table->foreign('owner_id')->references('id')->on('students')
                 ->onDelete('cascade');

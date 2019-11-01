@@ -29,9 +29,14 @@
     <input type="file" name="pdf_file">
     <span>{{$errors->first('pdf_file')}}</span>
 
-    <input type="text" name="author_name" placeholder="author_name" value="{{$document->author_name}}">
+{{--    <input type="text" name="author_name" placeholder="author_name" value="{{$document->author_name}}">--}}
+{{--    <span>{{$errors->first('author_name')}}</span>--}}
+    @foreach($authors as $author)
+    <input type="text" name="author_name" placeholder="author name" value="{{$author->name}}">
     <span>{{$errors->first('author_name')}}</span>
-
+    <input type="text" name="author_mail" placeholder="author email" value="{{$author->mail}}">
+    <span>{{$errors->first('author_mail')}}</span>
+    @endforeach
 
 
     <button type="submit">Save</button>

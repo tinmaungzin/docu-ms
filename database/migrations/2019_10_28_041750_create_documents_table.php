@@ -18,7 +18,6 @@ class CreateDocumentsTable extends Migration
             $table->char('title',200);
             $table->text('abstract');
             $table->char('filename',120);
-            $table->char('author_name',120);
             $table->unsignedInteger('owner_id');
             $table->foreign('owner_id')->references('id')->on('students')
                 ->onDelete('cascade');

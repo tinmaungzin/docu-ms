@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use App\Models\Bookmark;
 use App\Models\DocumentHistory;
 use App\Http\Requests\DocumentRequest;
@@ -45,9 +46,19 @@ class DocumentController extends Controller
     public function store(DocumentRequest $request)
     {
 
-        $data = $request->except('pdf_file');
+        $data = $request->except('pdf_file','author_name','author_mail');
         $data['filename'] = $this->saveFile($request->file('pdf_file'));
-        Document::create($data);
+        $document = Document::create($data);
+        $author = Author::where('mail', $request->author_mail)->get();
+        if($author->count()>0){
+            $document->authors()->attach($author[0]->id);
+        }else{
+            $author = new Author();
+            $author->name = $request->author_name;
+            $author->mail = $request->author_mail;
+            $author->save();
+            $document->authors()->attach($author->id);
+        }
         return redirect(route('documents.index'));
     }
 
@@ -62,18 +73,13 @@ class DocumentController extends Controller
 
     public function show(Document $document)
     {
-//        $bookmark = 0;
-
         $id = Auth::user()->id;
         $student = Student::find($id);
         $owner = Student::where('id',$document->owner_id)->firstOrFail();
         $histories = $document->document_histories;
-
-//        if($student->bookmarks->where('document_id' , $document->id))
         $bookmark = $student->bookmarks->where('document_id' , $document->id);
-//        dd($bookmark);
-
-        return view('Documents.show',compact('document','owner','student','histories','bookmark'));
+        $authors = $document->authors;
+        return view('Documents.show',compact('document','owner','student','histories','bookmark','authors'));
     }
 
     public function guestShow(Document $document)
@@ -88,7 +94,8 @@ class DocumentController extends Controller
         $student = Student::find($id);
         $major = $student->major;
         $submajors = $student->major->submajors;
-        return view('Documents.edit',compact('submajors','student','major','document'));
+        $authors = $document->authors;
+        return view('Documents.edit',compact('submajors','student','major','document','authors'));
     }
 
     public function update(DocumentRequest $request, Document $document)
@@ -98,15 +105,36 @@ class DocumentController extends Controller
         $history->title = $document->title;
         $history->abstract = $document->abstract;
         $history->filename = $document->filename;
-        $history->author_name = $document->author_name;
         $history->owner_id = $document->owner_id;
         $history->major_id = $document->major_id;
         $history->submajor_id = $document->submajor_id;
         $history->save();
+        $history_author = Author::where('mail', $request->author_mail)->get();
+        if($history_author->count()>0){
+            $history->authors()->attach($history_author[0]->id);
+        }else{
+            $author = new Author();
+            $author->name = $request->author_name;
+            $author->mail = $request->author_mail;
+            $author->save();
+            $history->authors()->attach($author->id);
+        }
 
-        $data = $request->except('pdf_file');
+        $data = $request->except('pdf_file','author_name','author_mail');
         $data['filename'] = $this->saveFile($request->file('pdf_file'));
         $document->update($data);
+        $author = Author::where('mail', $request->author_mail)->get();
+        if($author->count()>0){
+            $document->authors()->detach();
+            $document->authors()->attach($author[0]->id);
+        }else{
+            $author = new Author();
+            $author->name = $request->author_name;
+            $author->mail = $request->author_mail;
+            $author->save();
+            $document->authors()->detach();
+            $document->authors()->attach($author->id);
+        }
         return redirect(route('documents.show',['document' => $document->id]));
     }
 
