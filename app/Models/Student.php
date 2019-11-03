@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Student extends Authenticatable
 {
     protected $guarded = ['id'];
+
     public function major()
     {
         return $this->belongsTo(Major::class);
