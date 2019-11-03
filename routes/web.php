@@ -14,12 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-//Test Routes
-Route::get('/test-script', 'Test\TestController@testScript');
 
 Route::resource('students', 'StudentController')->except('destroy');
 Route::get('documents', 'DocumentController@index')->name('documents.index');
@@ -30,12 +24,18 @@ Route::post('documents/{document}', 'DocumentController@update')->name('document
 Route::get('documents/{document}', 'DocumentController@show')->name('documents.show');
 Route::get('documents-guest/{document}', 'DocumentController@guestShow')->name('documents.guestShow');
 Route::get('students-guest/{student}', 'StudentController@guestShow')->name('students.guestShow');
+Route::get('authors/{author}', 'AuthorController@show')->name('authors.show');
+Route::get('authors-guest/{author}', 'AuthorController@guestShow')->name('authors.guestShow');
+Route::get('hods', 'HodController@show')->name('hods.show');
+Route::post('search', 'SearchController@index')->name('search.index');
+Route::post('guestSearch', 'SearchController@guestIndex')->name('search.guestIndex');
 Route::get('bookmark/{student}/{document}', 'BookmarkController@index')->name('bookmark.index');
 Route::post('documents', 'DocumentController@store')->name('documents.store');
 Route::get('file/{name}', 'FileController@downloadFile')->name('file.download');
 Route::get('login', 'LoginController@showLoginForm')->name('login.form');
 Route::post('login', 'LoginController@login')->name('login.login');
 Route::match(['get', 'post'], 'logout', 'LoginController@logout')->name('login.logout');
+Route::get('info/about', 'InfoController@about')->name('info.about');
 
 
 //Auth::routes();

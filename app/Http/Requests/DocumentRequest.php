@@ -28,6 +28,7 @@ class DocumentRequest extends FormRequest
             'abstract' => 'required',
             'pdf_file' => 'required',
             'author_name' => 'required',
+            'author_mail' => 'required|email'
         ];
     }
 }
