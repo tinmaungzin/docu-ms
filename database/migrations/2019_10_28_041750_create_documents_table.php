@@ -27,6 +27,7 @@ class CreateDocumentsTable extends Migration
             $table->unsignedInteger('submajor_id');
             $table->foreign('submajor_id')->references('id')->on('submajors')
                 ->onDelete('cascade');
+            $table->boolean('approved')->default(false);
             $table->timestamps();
         });
     }

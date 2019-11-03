@@ -7,6 +7,7 @@ use App\Models\Document;
 use App\Models\Major;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
@@ -60,9 +61,11 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
+        $id = Auth::user()->id;
+        $auth_user = Student::find($id);
         $documents = $student->documents->all();
 //        dd($documents);
-        return view('Students.show', compact('student', 'documents'));
+        return view('Students.show', compact('student', 'documents','auth_user'));
     }
     public function guestShow(Student $student)
     {
@@ -84,13 +87,16 @@ class StudentController extends Controller
         if($student->bookmarks){
             $bookmarks = $student->bookmarks;
             foreach($bookmarks as $bookmark){
-                $bookmarkeds = Document::where('id', $bookmark->id)->get();
+//                dd($bookmark->id);
+//                dd(Document::where('id', $bookmark->id)->get());
+                $bookmarkeds = Document::where('id', $bookmark->document_id)->get();
             }
         }
-
 //        dd($bookmarkeds);
         $majors = Major::all();
-        return view('Students.edit', compact('student','majors','bookmarkeds'));
+        $id = Auth::user()->id;
+        $auth_user = Student::find($id);
+        return view('Students.edit', compact('student','majors','bookmarkeds','auth_user'));
     }
 
     /**

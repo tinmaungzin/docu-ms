@@ -10,4 +10,9 @@ class Major extends Model
     {
         return $this->hasMany(Submajor::class);
     }
+
+    public function documents()
+    {
+        return $this->hasMany(Document::class);
+    }
 }

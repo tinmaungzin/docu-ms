@@ -23,24 +23,24 @@ class DocumentController extends Controller
     public function index()
     {
         $id = Auth::user()->id;
-        $student = Student::find($id);
-        $documents = Document::paginate(8);
-        return view('Documents.index', compact('documents','student'));
+        $auth_user = Student::find($id);
+        $documents = Document::where('approved',true)->paginate(8);
+        return view('Documents.index', compact('documents','auth_user'));
     }
 
     public function guestIndex()
     {
-        $documents = Document::paginate(8);
+        $documents = Document::where('approved',true)->paginate(8);
         return view('Documents.index', compact('documents'));
     }
 
     public function create()
     {
         $id = Auth::user()->id;
-        $student = Student::find($id);
-        $major = $student->major;
-        $submajors = $student->major->submajors;
-        return view('Documents.create',compact('major','submajors','student'));
+        $auth_user = Student::find($id);
+        $major = $auth_user->major;
+        $submajors = $auth_user->major->submajors;
+        return view('Documents.create',compact('major','submajors','auth_user'));
     }
 
     public function store(DocumentRequest $request)
@@ -74,28 +74,33 @@ class DocumentController extends Controller
     public function show(Document $document)
     {
         $id = Auth::user()->id;
-        $student = Student::find($id);
+        $auth_user = Student::find($id);
         $owner = Student::where('id',$document->owner_id)->firstOrFail();
         $histories = $document->document_histories;
-        $bookmark = $student->bookmarks->where('document_id' , $document->id);
+        $bookmark = $auth_user->bookmarks->where('document_id' , $document->id);
         $authors = $document->authors;
-        return view('Documents.show',compact('document','owner','student','histories','bookmark','authors'));
+        $major = $document->major;
+        return view('Documents.show',compact('document','owner','auth_user','histories','bookmark','authors','major'));
     }
 
     public function guestShow(Document $document)
     {
         $owner = Student::where('id',$document->owner_id)->firstOrFail();
-        return view('Documents.show',compact('document','owner'));
+        $authors = $document->authors;
+        $major = $document->major;
+        $histories = $document->document_histories;
+
+        return view('Documents.show',compact('document','owner','authors','major','histories'));
     }
 
     public function edit(Document $document)
     {
         $id = Auth::user()->id;
-        $student = Student::find($id);
-        $major = $student->major;
-        $submajors = $student->major->submajors;
+        $auth_user = Student::find($id);
+        $major = $auth_user->major;
+        $submajors = $auth_user->major->submajors;
         $authors = $document->authors;
-        return view('Documents.edit',compact('submajors','student','major','document','authors'));
+        return view('Documents.edit',compact('submajors','auth_user','major','document','authors'));
     }
 
     public function update(DocumentRequest $request, Document $document)

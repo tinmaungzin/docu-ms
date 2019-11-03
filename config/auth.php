@@ -50,6 +50,10 @@ return [
         'stu' => [
             'driver' => 'session',
             'provider' => 'students'
+        ],
+        'hod' => [
+            'driver' => 'session',
+            'provider' => 'hods'
         ]
     ],
 
@@ -78,6 +82,10 @@ return [
         'students' => [
             'driver' => 'eloquent',
             'model' => \App\Models\Student::class
+        ],
+        'hods' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Hod::class
         ],
 
         // 'users' => [

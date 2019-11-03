@@ -25,7 +25,7 @@ class StudentRequest extends FormRequest
     {
         return [
             'name'=> 'required',
-            'school_mail'=>'required|email|unique:students',
+            'school_mail'=>'required|email|unique:students|ends_with:mtu.edu.mm',
             'password'=> 'required',
             'confirm_password'=>'required|same:password',
             'student_id' => 'required|unique:students',

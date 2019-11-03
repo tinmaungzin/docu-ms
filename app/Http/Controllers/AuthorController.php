@@ -18,9 +18,9 @@ class AuthorController extends Controller
     public function show(Author $author)
     {
         $id = Auth::user()->id;
-        $student = Student::find($id);
+        $auth_user = Student::find($id);
         $documents = $author->documents;
-        return view('Authors.show',compact('author','documents','student'));
+        return view('Authors.show',compact('author','documents','auth_user'));
     }
 
     public function guestShow(Author $author)
