@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class navMiddleware
+class infoMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,10 +17,8 @@ class navMiddleware
     public function handle($request, Closure $next)
     {
 
-        if (Auth::guard('stu')->check()) {
+        if(Auth::guard('stu')->check()||Auth::guard('hod')->check()){
             return $next($request);
-        } else {
-            return redirect('login');
         }
     }
 }

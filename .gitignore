@@ -10,6 +10,8 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 /.idea
+/storage/pdf
+/public/images
 
 /storage/app/public
 /storage/pdf

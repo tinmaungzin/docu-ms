@@ -67,6 +67,7 @@
                         <div class="col-lg-12 p-5">
                             <h1 class="mb-4">Edit Document</h1>
                             <form action="{{route('documents.update',['document' => $document->id])}}" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="row">
                                     <div class="col-md-12 form-group">
                                         <label for="m_email">Title</label>

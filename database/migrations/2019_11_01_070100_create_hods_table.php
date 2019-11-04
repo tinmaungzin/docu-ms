@@ -15,8 +15,10 @@ class CreateHodsTable extends Migration
     {
         Schema::create('hods', function (Blueprint $table) {
             $table->increments('id');
+            $table->char('name',120);
             $table->char('school_mail',120);
             $table->char('password',120);
+            $table->char('type')->default('hod');
             $table->unsignedInteger('major_id');
             $table->foreign('major_id')->references('id')->on('majors');
             $table->timestamps();

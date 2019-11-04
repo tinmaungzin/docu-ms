@@ -19,6 +19,7 @@ class CreateStudentsTable extends Migration
             $table->char('school_mail',120)->unique();
             $table->char('password',120);
             $table->char('student_id',120);
+            $table->char('type')->default('stu');
             $table->unsignedInteger('major_id');
             $table->foreign('major_id')->references('id')->on('majors')
                 ->onDelete('cascade');
