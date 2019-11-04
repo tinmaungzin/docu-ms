@@ -6,6 +6,7 @@
     <mapping directory="$PROJECT_DIR$/app/scripts/PDF-watermarking" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/scripts/keywords-extraction-from-abstract" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/laradock" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/python-service/Digital-Watermarking-Book-Recommendation-and-Keyword-Extraction-using-flask" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/scripts/Book-Recommendation" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/scripts/PDF-watermarking" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/scripts/keywords-extraction-from-abstract" vcs="Git" />
