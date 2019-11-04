@@ -27,6 +27,9 @@ use Illuminate\Support\Facades\Route;
     Route::get('authors/{author}','AuthorController@show')->name('authors.show');
     Route::get('authors-guest/{author}','AuthorController@guestShow')->name('authors.guestShow');
     Route::get('hods','HodController@show')->name('hods.show');
+    Route::any('hods/list','HodController@list')->name('hods.list');
+    Route::get('hods/{document}','HodController@detail')->name('hods.detail');
+    Route::get('hods/{document}/approve','HodController@approve')->name('hods.approve');
     Route::post('search','SearchController@index')->name('search.index');
     Route::post('guestSearch','SearchController@guestIndex')->name('search.guestIndex');
     Route::get('bookmark/{student}/{document}','BookmarkController@index')->name('bookmark.index');
@@ -36,6 +39,8 @@ use Illuminate\Support\Facades\Route;
     Route::post('login','LoginController@login')->name('login.login');
     Route::match(['get', 'post'], 'logout', 'LoginController@logout')->name('login.logout');
     Route::get('info/about','InfoController@about')->name('info.about');
+    Route::get('info/guestAbout','InfoController@guestAbout')->name('info.guestAbout');
+    Route::get('info/hodAbout','InfoController@hodAbout')->name('info.hodAbout');
 
 
 //Auth::routes();

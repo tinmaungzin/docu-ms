@@ -25,7 +25,14 @@
             </div>
             <ul class="navbar-nav ml-auto">
                 <li style="list-style: none" class="nav-item active"><a href="#" class="nav-link">Home</a></li>
-                <li style="list-style: none" class="nav-item"><a href="{{route('info.about')}}" class="nav-link">About</a></li>
+                @if($auth_user->type==='stu')
+                    <li style="list-style: none" class="nav-item"><a href="{{route('info.about')}}" class="nav-link">About</a></li>
+                @endif
+                @if($auth_user->type==='hod')
+                    <li style="list-style: none" class="nav-item"><a href="{{route('info.hodAbout')}}" class="nav-link">About</a></li>
+                    <li style="list-style: none" class="nav-item"><a href="{{route('hods.show')}}" class="nav-link">Waiting List</a></li>
+                    <li style="list-style: none" class="nav-item"><a href="{{route('hods.list')}}" class="nav-link">Approved List</a></li>
+                @endif
             </ul>
             <li style="list-style: none" class="nav-item">
                 <div class="dropdown ">
