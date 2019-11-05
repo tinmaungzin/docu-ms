@@ -4,6 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string title
+ * @property string abstract
+ */
 class Document extends Model
 {
     protected $guarded = ['id'];
