@@ -78,6 +78,7 @@ class DocumentController extends Controller
         $response = $this->extractKeywordService->sendRequest('POST');
         $abstracts = collect($response->abstract);
 
+
         return redirect(route('documents.index'));
     }
 
