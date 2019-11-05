@@ -1,9 +1,9 @@
 @extends('layouts.master')
 @section('content')
 
-    <section class="site-cover" style="background-image: url( '{{asset('images/bg.jpg')}}' );" id="section-home">
+    <section class="site-cover" style="background-image: url('{{asset('images/bg.jpg')}}' );" id="section-home">
         <div class="container">
-            <div class="row align-items-center justify-content-center text-center site-vh-100">
+            <div class="row align-items-center justify-content-center text-center site-vh-100" id="aboutVh">
 
             </div>
         </div>
@@ -16,12 +16,12 @@
             <div class="row">
 
                 <div class="col-md-12  mb-5 site-animate">
-                    <h2 class="display-4" style="padding-top: 1em; margin-left : 540px">Mission</h2>
+                    <h2 class="display-4" id="display4" style="padding-top: 1em; margin-left : 470px">System</h2>
                 </div>
             </div>
 
-            <div class="col-md-12 site-animate" style="text-align: justify;margin-left: 80px ;">
-                <p class="lead" > <span style="padding-left: 50px;padding-bottom: 15px;">Natural Language Processing (NLP) requires modeling complex relationships between the semantics of the language. While traditional machine learning techniques are used for NLP, the models built for conversations, called chatbots, are unable to be truly generic. While chatbots have been made with traditional machine learning techniques, deep learning has allowed the complexities within NLP to be easier to model and can be leveraged to build a chatbot which has a real conversation with a human. Deep neural networks (DNNs) have revolutionized the field of natural language processing (NLP).  Although previous approaches exist, they are often restricted to specific domains (e.g., booking an airline ticket) and require handcrafted rules. Recurrent neural networks are one of the staples of deep learning, allowing neural networks to work with sequences of data (text). Modeling conversation is an important task in natural language processing and artiﬁcial intelligence (AI). Indeed, ever since the birth of AI, creating a good chatbot remains one of the ﬁeld’s hardest challenges. While chatbots can be used for various tasks, in general they have to understand users’ utterances and provide responses that are relevant to the problem at hand. This proposed system Sequence to Sequence (Seq2Seq) based generation models.  In proposed system, “Cornell movie dialog Corpus” dataset is acquired to train the model. This system is implemented by using PYTHON TENSORFLOW programming language.</span></p>
+            <div class="col-md-12 site-animate" style="text-align: justify;margin-left: 20px ;">
+                <p class="lead" > <span style="padding-left: 50px;padding-bottom: 15px;">his system is a digital archive for Mandalay Technological Uniersity It is an integrated design project comprising many fields: information security, machine learning, natural language processing and networking. This system aims for the convenience of students from Mandalay Technological Uniersity to review the previous reseraches on a user friendly web application. It provides features like: Uploading research papers and thesis books by a registered user in the system, Adding digital watermark for every uploaded document to protect copy right, downloading the documents by every user visiting the website, Sending notifications to respective head of department in MTU for approval of uploaded document.</span></p>
             </div>
         </div>
     </section>
@@ -33,12 +33,27 @@
             <div class="row">
 
                 <div class="col-md-12 mb-5 site-animate">
-                    <h2 class="display-4" style="padding-top: 1em;margin-left : 540px">Vission</h2>
+                    <h2 class="display-4" id="display5" style="padding-top: 1em;margin-left : 350px">Terms & Conditions</h2>
                 </div>
             </div>
 
-            <div class="col-md-12 site-animate" style=" text-align: justify;margin-left: 80px ;">
-                <p class="lead"><span style="padding-left: 50px; padding-bottom: 15px">  Natural Language Processing (NLP) requires modeling complex relationships between the semantics of the language. While traditional machine learning techniques are used for NLP, the models built for conversations, called chatbots, are unable to be truly generic. While chatbots have been made with traditional machine learning techniques, deep learning has allowed the complexities within NLP to be easier to model and can be leveraged to build a chatbot which has a real conversation with a human. Deep neural networks (DNNs) have revolutionized the field of natural language processing (NLP).  Although previous approaches exist, they are often restricted to specific domains (e.g., booking an airline ticket) and require handcrafted rules. Recurrent neural networks are one of the staples of deep learning, allowing neural networks to work with sequences of data (text). Modeling conversation is an important task in natural language processing and artiﬁcial intelligence (AI). Indeed, ever since the birth of AI, creating a good chatbot remains one of the ﬁeld’s hardest challenges. While chatbots can be used for various tasks, in general they have to understand users’ utterances and provide responses that are relevant to the problem at hand. This proposed system Sequence to Sequence (Seq2Seq) based generation models.  In proposed system, “Cornell movie dialog Corpus” dataset is acquired to train the model. This system is implemented by using PYTHON TENSORFLOW programming language.</span></p>
+            <div class="col-md-12 site-animate" style=" text-align: justify;margin-left: 20px ;">
+                <p class="lead"><span style="padding-left: 50px; padding-bottom: 15px"> This system can only be used for non-profit education purpose. A reserch paper or a thesis book can be uploaded only by a reserach student of MTU who is registered to the system.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="site-section bg-light" id="section-contact">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 mb-5 site-animate">
+                    <h2 class="display-4" id="display6" style="padding-top: 1em;margin-left : 350px">Development Team</h2>
+                </div>
+            </div>
+
+            <div class="col-md-12 site-animate" style=" text-align: justify;margin-left: 20px ;">
+                <p class="lead"><span style="padding-left: 50px; padding-bottom: 15px"> This system is developed by CEIT 2nd batch students for the partial fulfilment of Bachelor of Engineering in 2019. Apart from the application, server configuration and port forwarding are also worked by the team members.</span></p>
             </div>
         </div>
     </section>

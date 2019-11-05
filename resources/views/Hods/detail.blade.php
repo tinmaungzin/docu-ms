@@ -10,57 +10,143 @@
         </div>
     </section>
 
+
+
+
+
+
+
+
+
     <section class="site-section bg-light" id="section-contact">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center mb-5 site-animate">
-                    <h2 class="display-4">
-                        <span style="padding-top: 1em">{{$document->title}}</span>
-                    </h2>
+                    <h2 class="display-4"><span style="padding-top: 1em">{{$document->title}}</span></h2>
                 </div>
             </div>
-            <div class="col-md-12 site-animate">
-                @auth
-                    @foreach($authors as $author)
-                        <p class="lead">
-{{--                            <a href="{{route('authors.show',['author' => $author->id])}}">--}}
-                                <span style="font-size: 30px">Author:</span><span style="font-size:30px">{{$author->name}}</span>
-{{--                            </a>--}}
-                        </p>
 
-                    @endforeach
-                @endauth
-                <p class="lead"><span style="font-size: 30px">Major:</span><span style="font-size:30px">{{$major}}</span></p>
-                <p class="lead"><span style="font-size: 30px">Abstract</span></p>
-                <p class="lead" style="text-align: justify !important; margin-left: 18%">
+            <div class="col-md-12 site-animate">
+                <div class = "bookDetailBody">
+                    <div class = "bookDetails">
+                        @auth
+                            @foreach($authors as $author)
+                                <p class="display-4">
+                                    <a href="{{route('authors.show',['author' => $author->id])}}">
+                                        <span style="font-size: 30px">Author:</span><span style="font-size:30px">{{$author->name}}</span>
+                                    </a>
+                                </p>
+
+                            @endforeach
+                        @endauth
+
+                        @guest
+                            @foreach($authors as $author)
+                                <p class="display-4">
+                                    <a href="{{route('authors.guestShow',['author' => $author->id])}}">
+                                        <span style="font-size: 30px">Author:</span><span style="font-size:30px">{{$author->name}}</span>
+                                    </a>
+                                </p>
+                            @endforeach
+                        @endguest
+
+
+                        <p class="display-4"><span>Major:</span><span>{{$document->major->name}}</span></p>
+                        <p class="display-4"><span>Abstract</span></p>
+                    </div>
+
+
+
+                </div>
+                <p class="lead" id="individualabstract" style="text-align: justify !important;margin-left: 80px">
                     <span style="padding-left: 50px; padding-bottom: 15px">
                         {{$document->abstract}}
                     </span>
                 </p>
 
+
                 <p  class="mb-0" ><a href="{{route('file.download',['name' => $document->filename])}}" class="btn btn-primary btn-lg">Download PDF</a></p>
-                    @if(!$document->approved)
-                <p  class="mb-0" ><a href="{{route('hods.approve',['document' => $document->id])}}" class="btn btn-primary btn-lg">Approve PDF</a></p>
-                    @endif
-                <p class="lead">
-                <p style="font-size: 30px">Submission History</p>
+
+                <p class="display-4"><span style="font-size: 30px">Submission History</span></p>
                 @foreach($histories as $history)
                     <a href="">- {{$history->title}}</a>
-                    @endforeach
-                    </p>
-                    <p class="lead">
-                    <p style="font-size: 30px">Uploader</p>
-                    @auth
-                        <p>- {{$owner->name}}</p>
-                    @endauth
-                        </p>
+                @endforeach
 
+                <p class="display-4"><span style="font-size: 30px">Uploader</span></p>
+                <p>- {{$owner->name}}</p>
+{{--                @auth--}}
+{{--                    <a href="{{route('students.show',['student' => $document->owner_id])}}">- {{$owner->name}}</a>--}}
 
+{{--                @endauth--}}
+
+{{--                @guest--}}
+{{--                    <a href="{{route('students.guestShow',['student' => $document->owner_id])}}">- {{$owner->name}}</a>--}}
+{{--                @endguest--}}
 
             </div>
 
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+{{--    <section class="site-section bg-light" id="section-contact">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-12 text-center mb-5 site-animate">--}}
+{{--                    <h2 class="display-4">--}}
+{{--                        <span style="padding-top: 1em">{{$document->title}}</span>--}}
+{{--                    </h2>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-12 site-animate">--}}
+{{--                @auth--}}
+{{--                    @foreach($authors as $author)--}}
+{{--                        <p class="lead">--}}
+{{--                            <a href="{{route('authors.show',['author' => $author->id])}}">--}}
+{{--                                <span style="font-size: 30px">Author:</span><span style="font-size:30px">{{$author->name}}</span>--}}
+{{--                            </a>--}}
+{{--                        </p>--}}
+
+{{--                    @endforeach--}}
+{{--                @endauth--}}
+{{--                <p class="lead"><span style="font-size: 30px">Major:</span><span style="font-size:30px">{{$major}}</span></p>--}}
+{{--                <p class="lead"><span style="font-size: 30px">Abstract</span></p>--}}
+{{--                <p class="lead" style="text-align: justify !important; margin-left: 18%">--}}
+{{--                    <span style="padding-left: 50px; padding-bottom: 15px">--}}
+{{--                        {{$document->abstract}}--}}
+{{--                    </span>--}}
+{{--                </p>--}}
+
+{{--                <p  class="mb-0" ><a href="{{route('file.download',['name' => $document->filename])}}" class="btn btn-primary btn-lg">Download PDF</a></p>--}}
+{{--                    @if(!$document->approved)--}}
+{{--                <p  class="mb-0" ><a href="{{route('hods.approve',['document' => $document->id])}}" class="btn btn-primary btn-lg">Approve PDF</a></p>--}}
+{{--                    @endif--}}
+{{--                <p class="lead">--}}
+{{--                <p style="font-size: 30px">Submission History</p>--}}
+{{--                @foreach($histories as $history)--}}
+{{--                    <a href="">- {{$history->title}}</a>--}}
+{{--                    @endforeach--}}
+{{--                    </p>--}}
+{{--                    <p class="lead">--}}
+{{--                    <p style="font-size: 30px">Uploader</p>--}}
+{{--                    @auth--}}
+{{--                        <p>- {{$owner->name}}</p>--}}
+{{--                    @endauth--}}
+{{--                        </p>--}}
+
+
+
+{{--            </div>--}}
+
+{{--        </div>--}}
+{{--    </section>--}}
 
 
     @endsection

@@ -47,6 +47,12 @@ class DocumentController extends Controller
     {
 
         $data = $request->except('pdf_file','author_name','author_mail');
+//        dd($request->pdf_file->getMimeType());
+//        if($request->pdf_file->getMimeType()=='application/pdf'){
+//            $data['filename'] = $this->saveFile($request->file('pdf_file'));
+//        }
+
+
         $data['filename'] = $this->saveFile($request->file('pdf_file'));
         $document = Document::create($data);
         $author = Author::where('mail', $request->author_mail)->get();
