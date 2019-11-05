@@ -54,6 +54,7 @@ class DocumentController extends Controller
 //        dd($request->file('pdf_file'));
 
         $data = $request->except('pdf_file', 'author_name', 'author_mail');
+
         $data['filename'] = $this->saveFile($request->file('pdf_file'));
         $document = Document::create($data);
         $author = Author::where('mail', $request->author_mail)->first();

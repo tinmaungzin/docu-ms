@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::resource('students', 'StudentController')->except('destroy');
 Route::get('documents', 'DocumentController@index')->name('documents.index');
 Route::get('documents-guest', 'DocumentController@guestIndex')->name('documents.guestIndex');
@@ -34,12 +35,18 @@ Route::post('guestSearch', 'SearchController@guestIndex')->name('search.guestInd
 Route::get('bookmark/{student}/{document}', 'BookmarkController@index')->name('bookmark.index');
 Route::post('documents', 'DocumentController@store')->name('documents.store');
 Route::get('file/{name}', 'FileController@downloadFile')->name('file.download');
-Route::get('login', 'LoginController@showLoginForm')->name('login.form');
+Route::get('login', 'LoginController@showLoginForm')->name('login');
 Route::post('login', 'LoginController@login')->name('login.login');
 Route::match(['get', 'post'], 'logout', 'LoginController@logout')->name('login.logout');
 Route::get('info/about', 'InfoController@about')->name('info.about');
 Route::get('info/guestAbout', 'InfoController@guestAbout')->name('info.guestAbout');
 Route::get('info/hodAbout', 'InfoController@hodAbout')->name('info.hodAbout');
+
+//    Route::group(['middleware'=> 'typeCheck'], function (){
+//        Route::post('search','SearchController@index')->name('search.index');
+//        Route::post('guestSearch','SearchController@guestIndex')->name('search.guestIndex');
+//
+//    });
 
 
 //Auth::routes();

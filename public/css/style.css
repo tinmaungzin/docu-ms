@@ -1,5 +1,4 @@
 html {
-    /* background-color: rgb(175, 189, 183);*/
     font-family:'Raleway', sans-serif;;
     overflow-x: hidden;
 }
@@ -9,7 +8,7 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: #111 !important;
-    margin-top: 00px;
+    margin-top: 0px;
 }
 
 a {
@@ -41,20 +40,25 @@ h1, h2, h3, h4, h5,
 }
 
 .site-navbar-light {
-    background: rgb(52, 121, 92) !important;
+    background: rgb(115, 138, 109) !important;;
     position: absolute;
     left: 0;
     right: 0;
     z-index: 3;
 }
 
-@media screen and (max-width: 991px) {
-    .site-navbar-light {
-        background: #000 !important;
-        top: 0;
-        position: relative;
-    }
-}
+/*@media screen and (max-width: 991px) {*/
+/*    #home1, #home2{*/
+/*        margin-right: 400px*/
+
+/*    }*/
+/*    .site-navbar-light {*/
+/*        background: #000 !important;*/
+
+/*        top: 0;*/
+/*        position: relative;*/
+/*    }*/
+/*}*/
 
 .site-navbar-light .navbar-nav > .nav-item > .nav-link {
     font-size: 13px;
@@ -64,34 +68,33 @@ h1, h2, h3, h4, h5,
     padding-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px;
-    margin-top: 10px;
 }
 
-@media screen and (max-width: 960px) {
-    .site-navbar-light .navbar-nav > .nav-item > .nav-link {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-}
+/*@media screen and (max-width: 960px) {*/
+/*    .site-navbar-light .navbar-nav > .nav-item > .nav-link {*/
+/*        padding-top: 10px;*/
+/*        padding-bottom: 10px;*/
+/*        padding-left: 0px;*/
+/*        padding-right: 0px;*/
+/*    }*/
+/*}*/
 
 .site-navbar-light .navbar-nav > .nav-item.site-cta a {
     color: #fff;
 }
-#FDA403
+
 .site-navbar-light .navbar-nav > .nav-item.site-seperator {
     position: relative;
     margin-left: 20px;
     padding-left: 20px;
 }
 
-@media screen and (max-width: 960px) {
-    .site-navbar-light .navbar-nav > .nav-item.site-seperator {
-        padding-left: 0;
-        margin-left: 0;
-    }
-}
+/*@media screen and (max-width: 960px) {*/
+/*    .site-navbar-light .navbar-nav > .nav-item.site-seperator {*/
+/*        padding-left: 0;*/
+/*        margin-left: 0;*/
+/*    }*/
+/*}*/
 
 .site-navbar-light .navbar-nav > .nav-item.site-seperator:before {
     position: absolute;
@@ -103,11 +106,11 @@ h1, h2, h3, h4, h5,
     background: rgba(255, 255, 255, 0.05);
 }
 
-@media screen and (max-width: 960px) {
-    .site-navbar-light .navbar-nav > .nav-item.site-seperator:before {
-        display: none;
-    }
-}
+/*@media screen and (max-width: 960px) {*/
+/*    .site-navbar-light .navbar-nav > .nav-item.site-seperator:before {*/
+/*        display: none;*/
+/*    }*/
+/*}*/
 
 .site-navbar-light .navbar-toggler {
     border: none;
@@ -120,30 +123,31 @@ h1, h2, h3, h4, h5,
 }
 
 .site-navbar-light.scrolled {
+
     position: fixed;
     right: 0;
     left: 0;
     top: 0;
-    margin-top: -130px;
-    background: rgb(69, 90, 81) !important;
+    margin-top: -180px;
+    background: rgb(115, 138, 109) !important;
 }
 
-@media screen and (max-width: 768px) {
-    .site-navbar-light.scrolled .navbar-nav {
-        background: none;
-        border-radius: 0px;
-        padding-left: 0rem !important;
-        padding-right: 0rem !important;
-    }
-}
+/*@media screen and (max-width: 768px) {*/
+/*    .site-navbar-light.scrolled .navbar-nav {*/
+/*        background: none;*/
+/*        border-radius: 0px;*/
+/*        padding-left: 0rem !important;*/
+/*        padding-right: 0rem !important;*/
+/*    }*/
+/*}*/
 
-@media screen and (max-width: 576px) {
-    .site-navbar-light.scrolled .navbar-nav {
-        background: none;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-}
+/*@media screen and (max-width: 576px) {*/
+/*    .site-navbar-light.scrolled .navbar-nav {*/
+/*        background: none;*/
+/*        padding-left: 0 !important;*/
+/*        padding-right: 0 !important;*/
+/*    }*/
+/*}*/
 
 .site-navbar-light.scrolled .navbar-toggler {
     border: none;
@@ -159,11 +163,11 @@ h1, h2, h3, h4, h5,
 .site-navbar-light.scrolled .nav-link {
     padding-top: 0.7rem !important;
     padding-bottom: 0.7rem !important;
-    color: #f8f9fa !important;
+    color: white !important;
 }
 
 .site-navbar-light.scrolled .nav-link.active {
-    color: rgb(175, 189, 183) !important;
+    color: #FDA403 !important;
 }
 
 .site-navbar-light.scrolled.awake {
@@ -180,13 +184,14 @@ h1, h2, h3, h4, h5,
 }
 
 .site-navbar-light.scrolled .navbar-brand {
-    color: #f8f9fa;
+    color: white;
 }
 
 .navbar-brand {
     text-transform: uppercase;
     letter-spacing: .1em;
 }
+
 
 .bg-image, .site-cover {
     background-size: cover;
@@ -203,12 +208,12 @@ h1, h2, h3, h4, h5,
     color: #fff;
 }
 
-@media screen and (max-width: 768px) {
-    .site-cover .site-heading {
-        font-size: 37px;
-        line-height: 1.3;
-    }
-}
+/*@media screen and (max-width: 768px) {*/
+/*    .site-cover .site-heading {*/
+/*        font-size: 37px;*/
+/*        line-height: 1.3;*/
+/*    }*/
+/*}*/
 
 .site-cover .site-subheading, .site-cover p {
     color: rgba(255, 255, 255, 0.7);
@@ -216,12 +221,12 @@ h1, h2, h3, h4, h5,
     font-family: "Raleway", sans-serif;
 }
 
-@media screen and (max-width: 768px) {
-    .site-cover .btn {
-        width: 100% !important;
-        border: 1px solid red;
-    }
-}
+/*@media screen and (max-width: 768px) {*/
+/*    .site-cover .btn {*/
+/*        width: 100% !important;*/
+/*        border: 1px solid red;*/
+/*    }*/
+/*}*/
 
 .site-cover a {
     position: relative;
@@ -254,6 +259,7 @@ h1, h2, h3, h4, h5,
 
 .site-cover .site-vh-100 {
     min-height: 700px !important;
+    min-width: 100%;
 }
 
 .site-slant {
@@ -273,18 +279,32 @@ h1, h2, h3, h4, h5,
     position: absolute;
     bottom: -100px;
 }
-
-@media screen and (max-width: 960px) {
-    .site-slant:after {
-        bottom: -150px;
-    }
+.searcResultheader{
+    width: 100%;
 }
-
-@media screen and (max-width: 768px) {
-    .site-slant:after {
-        bottom: -170px;
-    }
+.searcResultheader h3{
+    text-align: center;
 }
+.viewProfileHeader{
+    width: 100%;
+}
+.viewProfileHeader h3{
+    text-align: center;
+}
+.indexThesisTitle{
+    height: 250px;
+}
+/*@media screen and (max-width: 960px) {*/
+/*    .site-slant:after {*/
+/*        bottom: -150px;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (max-width: 768px) {*/
+/*    .site-slant:after {*/
+/*        bottom: -170px;*/
+/*    }*/
+/*}*/
 
 .site-slant.site-slant-white:after {
     background: #fff;
@@ -314,18 +334,14 @@ h1, h2, h3, h4, h5,
     text-align: right !important;
 }
 
-@media screen and (max-width: 768px) {
-    .display-4 {
-        font-size: 37px;
-    }
-}
+
 
 .text-black {
     color: #000 !important;
 }
 
 .bg-light {
-    background: #fafafa !important;
+    background: #fafafa;
 }
 
 .site-custom-gutters {
@@ -393,8 +409,8 @@ h1, h2, h3, h4, h5,
 }
 
 .btn.btn-primary {
-    background: rgb(175, 189, 183);
-    border-color: rgb(175, 189, 183);
+    background: rgb(115, 138, 109);
+    border-color: rgb(115, 138, 109);
     color: #fff;
     margin-bottom: 20px;
     border-radius: 1px;
@@ -407,27 +423,32 @@ h1, h2, h3, h4, h5,
 
 .btn.btn-outline-white {
     border-color:  rgb(175, 189, 183);
-    background:  rgb(117, 142, 131);
+    background:  rgb(115, 138, 109);
     border-radius: 0px;
     border-width: 1px;
+    color: white;
 }
 
 .btn.btn-outline-white:hover, .btn.btn-outline-white:focus, .btn.btn-outline-white:active {
     background: rgb(69, 90, 81);
+    color: #888;
     border-color: rgb(69, 90, 81);
     color: #fff;
 }
 
 .form-control {
     border: none;
-    width: 75%;
+    width: 100%;
     height: 55px !important;
     background: #e6e6e6 !important;
     color: #000 !important;
     font-size: 18px;
     border-radius: 0px;
 }
-
+.uploadHeader{
+    text-align: center;
+    margin-top: 20px;
+}
 textarea.form-control {
     height: inherit !important;
 }
@@ -436,25 +457,25 @@ textarea.form-control {
     height: 100vh;
 }
 
-@media screen and (max-width: 960px) {
-    .site-vh-100 {
-        height: inherit;
-        padding-top: 5em;
-        padding-bottom: 5em;
-    }
-}
+/*@media screen and (max-width: 960px) {*/
+/*    .site-vh-100 {*/
+/*        height: inherit;*/
+/*        padding-top: 5em;*/
+/*        padding-bottom: 5em;*/
+/*    }*/
+/*}*/
 
 .site-vh-75 {
     height: 75vh;
 }
 
-@media screen and (max-width: 960px) {
-    .site-vh-75 {
-        height: inherit;
-        padding-top: 5em;
-        padding-bottom: 5em;
-    }
-}
+/*@media screen and (max-width: 960px) {*/
+/*    .site-vh-75 {*/
+/*        height: inherit;*/
+/*        padding-top: 5em;*/
+/*        padding-bottom: 5em;*/
+/*    }*/
+/*}*/
 
 .site-tab-nav {
     padding: 0;
@@ -462,13 +483,13 @@ textarea.form-control {
     display: inline-block !important;
 }
 
-@media screen and (max-width: 576px) {
-    .site-tab-nav {
-        display: block !important;
-        margin-bottom: 10px;
-        width: 100% !important;
-    }
-}
+/*@media screen and (max-width: 576px) {*/
+/*    .site-tab-nav {*/
+/*        display: block !important;*/
+/*        margin-bottom: 10px;*/
+/*        width: 100% !important;*/
+/*    }*/
+/*}*/
 
 .site-tab-nav li {
     padding: 0;
@@ -476,13 +497,13 @@ textarea.form-control {
     display: inline-block !important;
 }
 
-@media screen and (max-width: 576px) {
-    .site-tab-nav li {
-        display: block !important;
-        margin-bottom: 10px;
-        width: 100% !important;
-    }
-}
+/*@media screen and (max-width: 576px) {*/
+/*    .site-tab-nav li {*/
+/*        display: block !important;*/
+/*        margin-bottom: 10px;*/
+/*        width: 100% !important;*/
+/*    }*/
+/*}*/
 
 .site-tab-nav li a {
     text-transform: uppercase;
@@ -531,15 +552,15 @@ textarea.form-control {
     right: 0;
 }
 
-@media screen and (max-width: 768px) {
-    #section-about .img {
-        position: relative;
-        right: inherit;
-    }
-    #section-about .img img {
-        max-width: 100%;
-    }
-}
+/*@media screen and (max-width: 768px) {*/
+/*    #section-about .img {*/
+/*      position: relative;*/
+/*      right: inherit;*/
+/*    }*/
+/*    #section-about .img img {*/
+/*        max-width: 100%;*/
+/*    }*/
+/*}*/
 
 #section-offer {
     padding: 12em 0;
@@ -552,7 +573,8 @@ textarea.form-control {
     margin-top: 20px;
 }
 .col-lg-8 {
-    margin-top: 35px;
+    margin-top: 0px;
+
 }
 
 .row #search_result_section{
@@ -843,11 +865,11 @@ textarea.form-control {
     }
 }
 
-.image-popup {
-    cursor: -webkit-zoom-in;
-    cursor: -moz-zoom-in;
-    cursor: zoom-in;
-}
+/*.image-popup {
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in;
+}*/
 
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {
@@ -1065,7 +1087,6 @@ input[type=search] {
     font-family: inherit;
     font-size: 100%;
     color: #0a0a0a;
-    /*background-image: #ededed !important;*/
 
 }
 /*input::-webkit-search-decoration,
@@ -1102,50 +1123,10 @@ input::-webkit-input-placeholder {
     color: #999;
 }
 
-/* Demo 2 */
-/* #demo-2 input[type=search] {
-   width: 15px;
-   padding-left: 10px;
-   color: transparent;
-   cursor: pointer;
- }
- #demo-2 input[type=search]:hover {
-   background-color: #fff;
- }
- #demo-2 input[type=search]:focus {
-   width: 220px;
-   padding-left: 32px;
-   color: #000;
-   background-color: #fff;
-   cursor: auto;
- }
- #demo-2 input:-moz-placeholder {
-   color: transparent;
- }
- #demo-2 input::-webkit-input-placeholder {
-   color: transparent;
- }*/
-/*#result {
-  position: absolute;
-  width: 100%;
-  max-width:870px;
-  cursor: pointer;
-  overflow-y: auto;
-  max-height: 350px;
-  box-sizing: border-box;
-  z-index: 1001;
-  padding-left: 0px;
- }*/
+
 form{
     margin: 0;
 }
-
-#profilesection{
-    margin-top: 80px !important;
-}
-
-
-
 
 .logInBody{
     width: 350px;
@@ -1153,9 +1134,9 @@ form{
     background-color: white;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
+    margin-top: 65px;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px 5px #888888;
+    box-shadow: 0px 0px 5px 5px #c5c1c1;
 }
 .logInHeader{
     width: 100%;
@@ -1186,6 +1167,7 @@ form{
 .logInInputs{
     width: 100%;
     margin-top: 30px;
+
 }
 .logInName{
     width: 100%;
@@ -1203,6 +1185,7 @@ form{
     background-color: #c5c1c1;
     border-radius: 5px;
     border-width: 0px;
+    padding: 9px 10px 9px 10px;
 }
 .logInValue input:hover{
     box-shadow: 0px 0px 2px 2px rgb(175, 189, 183);
@@ -1240,49 +1223,365 @@ form{
 .signUpButton a:hover{
     color: red;
 }
+.signUpBody{
+    width: 600px;
+    height: 820px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 5px #c5c1c1;
+}
+.signUpHeader{
+    width: 100%;
+    height: 100px;
+}
+.signUpLogo{
+    width: 90px;
+    height: 100%;
+    float: left;
+}
+.signUpLogo img{
+    width: 60px;
+    height: 70px;
+    margin: 20px;
+    margin-left: 100px;
+}
+.signUpTitle{
+    width: 480px;
+    float: left;
+    overflow: hidden;
+    margin-top: 40px;
+    text-align: center;
+}
+.signUpTitle p{
+    font-size: 18px;
+}
+.signUpMainBody{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.signUpInputs{
+    width: 100%;
+    margin-top: 30px;
 
+}
+.signUpName{
+    width: 100%;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+.signUpValue{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.signUpValue input{
+    width: 100%;
+    height: 40px;
+    color: rgb(43, 41, 41);
+    background-color: #c5c1c1;
+    border-radius: 5px;
+    border-width: 0px;
+    padding: 9px 10px 9px 10px;
+}
+.signUpValue input:hover{
+    box-shadow: 0px 0px 2px 2px rgb(175, 189, 183);
+}
+.signUpValue input:active{
+    box-shadow: 0px 0px 2px 2px rgb(175, 189, 183);
+}
+.signUpEnterButton{
+    text-align: center;
+}
+.signUpEnterButton button{
+    margin-top: 30px;
+    width: 100%;
+    height: 38px;
+    border-radius: 5px;
+    border-width: 0px;
+    border-color: black;
+    background-color:rgb(175, 189, 183);
+}
+.signUpEnterButton button:hover{
+    border-color: rgb(175, 189, 183);
+    color: rgb(175, 189, 183);
+    box-shadow: 0px 0px 2px 2px rgb(175, 189, 183);
+    background-color: rgb(69, 90, 81);
+}
+.signUpValue select{
+    background-color: #c5c1c1!important;
+    border-radius: 5px;
+}
+
+.bookDetailBody{
+    width: 100%;
+    height: 150px;
+}
+.bookDetails{
+    width: 20%;
+    margin-left: 85px;
+    float: left;
+}
+.bookDetails p{
+    font-size: 20px;
+}
+
+.bookMarkButton{
+    width: 80%;
+}
+.bookMarkButton p{
+    margin-left: 850px;
+}
+.homeReadMore{
+    width:100%;
+    height: 70px;
+}
+.homeReadMore a{
+    float: right;
+}
+.personalInformationHeader{
+    width: 100%;
+}
+.personalInformationHeader h3{
+    text-align: center;
+}
+.uploadMainBody{
+    height: 200% !important;
+    background-color: grey !important;
+}
 @media screen and (max-width: 414px){
     html{
-        /*background-color: none;*/
+        /* background-color: none;*/
         height: 100%;
+        width: 100%
     }
     .logInBody{
-        margin-top: 0px;
         width: 100%;
-        height: 450px !important;
         border-radius: 0px;
+        box-shadow: 0px 0px 0px 0px;
     }
+    .logInHeader{
+        margin-top: 140px;
+    }
+    span.navbar-brand{
+        display: none !important;
+    }
+    input[type=search]{
+        width: 240px!important;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .site-cover{
+        background-size: 100% 100%;
+    }
+    .site-cover .site-vh-100 {
+        min-height: 90px !important;
+        min-width: 100%;
+    }
+    #display4{
+        margin-left: 150px !important;
+        font-size: 20px; /*Vission*/
+    }
+    #display5{
+        margin-left: 100px !important;
+        font-size: 20px; /*Mission*/
+    }
+    #display6{
+        margin-left: 100px !important;
+        font-size: 20px; /*Mission*/
+    }
+    .display-4 span{
+        margin-left: 40px !important;
+        font-size: 20px !important; /*research paper*/
+    }
+    .mb-5 {
+        margin-bottom: 1rem!important;
+    }
+
+    .lead{
+        font-size: 14px;
+        width: 92% !important;
+        margin-left: -18px !important;
+    }
+    .form-control{
+        width: 100%;
+    }
+    /*.container-fluid{
+      height: 0 !important;
+    }*/
+    #section1{
+        height: 0 !important;
+    }
+    .site-animate span{
+        margin-left: -10px !important;
+    }
+    #individualabstract {
+        margin-left: 3px !important;
+    }
+    .signUpBody{
+        width:120%;
+        height: 120%;
+        margin: 0px;
+        border-radius: 0px;
+        box-shadow: 0px 0px 0px 0px;
+        margin-bottom: 0px;
+    }
+    .signUpValue input{
+        width: 400px;
+    }
+    #submajor{
+        width: 400px;
+    }
+    #submajor1{
+        width: 385px;
+    }
+    .signUpEnterButton{
+        width: 400px;
+    }
+    .signUpLogo{
+        width:20%;
+    }
+    .signUpLogo img{
+        margin-left: 20px;
+        float: left;
+    }
+    .signUpTitle{
+        width:70%;
+        float:left;
+    }
+    .navbar-brand{
+        display:none;
+    }
+    #site-navbar{
+        background-color: rgb(115, 138, 109) !important;
+    }
+    #about-navbar{
+        background-color: rgb(115, 138, 109) !important;
+    }
+    #profile-navbar{
+        background-color: rgb(115, 138, 109) !important;
+    }
+
+    .site-navbar-light .navbar-toggler {
+        padding-right: 30px;
+    }
+    .site-navbar-light.scrolled .navbar-toggler{
+        padding-right: 30px;
+        display:block;
+    }
+
 }
-@media screen and (max-width: 736px){
-    .logInBody{
+@media screen and (max-width: 736px) and (min-width:415px){
+    html{
         height: 100%;
+    }
+    .logInBody{
         margin-top: 0px;
     }
-}@media screen and (max-width: 768px){
+    .logInHeader{
+        margin-top: 0px;
+    }
+    .site-cover .site-vh-100 {
+        max-height: 90px;
+        min-width: 100%;
+    }
+    .site-cover{
+        background-size: 100% 100%;
+    }
+
+    #site-navbar{
+        background-color: rgb(115, 138, 109) !important;
+    }
+    /*.signUpValue input{
+         width: 540px;
+        }
+        #submajor{
+          width: 400px;
+        }
+      .signUpEnterButton{
+        width: 400px;
+      }*/
+}
+
+@media screen and (max-width: 768px) and (min-width:737px){
+    html{
+        /*background-color: none;*/
+
+    }
+    /*input[type=search]{
+      width: 400px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .site-cover{
+      background-size: 100% 100%;
+    }
+    .site-cover .site-vh-100 {
+    height: 90px !important;
+    min-width: 100%;
+    }*/
+    .logInBody{
+        margin-top: 285px;
+    }
+    .signUpBody{
+        width:100%;
+        margin-top: 0px;
+        border-radius: 0px;
+        box-shadow: 0px 0px 0px 0px;
+        margin-bottom: 0px;
+    }
+    .signUpValue input{
+        width: 540px;
+    }
+    #submajor{
+        width: 540px;
+    }
+    .signUpEnterButton{
+        width: 540px;
+    }
+
+}
+@media screen and (max-width: 1024px) and (min-width: 769px){
     html{
         width: 100%;
         height: 100%;
     }
-}@media screen and (max-width: 1024px){
+    .logInBody{
+        margin-top: 145px;
 
+    }
+
+    input[type=search]{
+        width: 300px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .signUpBody{
+        width:100%;
+        margin-top: 0px;
+        border-radius: 0px;
+        box-shadow: 0px 0px 0px 0px;
+        margin-bottom: 0px;
+    }
+    .signUpValue input{
+        width: 700px;
+    }
+    #submajor{
+        width: 700px;
+    }
+    .signUpEnterButton{
+        width: 700px;
+    }
 }
 .navbar-brand {
     font-weight:bold;
     font-size: 2rem !important;
     margin-top: 7px;
 }
-.container {
-    margin-left: 10px !important;
-    margin-right: 10px !important;
 
-}
-.ml-auto {
-    margin-left: 35%!important;
-}
-.row {
-    margin-left:0px;
-    margin-right: -100px;
-}
 .dropbtn {
     background-color:transparent !important;
 
@@ -1291,7 +1590,8 @@ form{
     border: none;
     cursor: pointer;
     height: 50px;
-    width: 150px
+    width: 150px;
+    margin-top: 8px;
 
 }
 
@@ -1325,3 +1625,4 @@ form{
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+

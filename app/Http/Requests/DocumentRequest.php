@@ -28,7 +28,7 @@ class DocumentRequest extends FormRequest
         return [
             'title' => 'required',
             'abstract' => 'required',
-            'pdf_file' => 'required',
+            'pdf_file' => 'required|mimes:pdf',
             'author_name' => 'required',
             'author_mail' => 'required|email'
         ];

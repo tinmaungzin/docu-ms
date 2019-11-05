@@ -50,7 +50,7 @@ class StudentController extends Controller
         $data = $request->except('password','confirm_password');
         $data['password'] = bcrypt($request['password']);
         Student::create($data);
-        return redirect(route('login.form'));
+        return redirect(route('login'));
     }
 
     /**

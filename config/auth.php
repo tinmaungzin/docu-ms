@@ -54,6 +54,10 @@ return [
         'hod' => [
             'driver' => 'session',
             'provider' => 'hods'
+        ],
+        'typeCheck' => [
+            'driver' => 'session',
+            'provider' => 'students'
         ]
     ],
 
@@ -87,6 +91,10 @@ return [
             'driver' => 'eloquent',
             'model' => \App\Models\Hod::class
         ],
+//        'typeCheck' => [
+//            'driver' => 'eloquent',
+//            'model' => \App\Models\Student::class
+//        ],
 
         // 'users' => [
         //     'driver' => 'database',

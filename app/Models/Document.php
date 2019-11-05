@@ -35,4 +35,9 @@ class Document extends Model
     {
         return $this->belongsToMany(Author::class);
     }
+
+    public function major()
+    {
+        return $this->belongsTo(Major::class);
+    }
 }
