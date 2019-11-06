@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ExtractKeywords;
+use App\Jobs\Watermarking;
 use App\Models\Author;
 use App\Models\Bookmark;
 use App\Models\DocumentHistory;
@@ -67,18 +69,10 @@ class DocumentController extends Controller
             $author->save();
             $document->authors()->attach($author->id);
         }
-//        Watermarking
-        $this->watermarkService->prepareData($document, $author);
-        $response = $this->watermarkService->sendRequest('POST');
-        $newFileName = 'watermarked/' . $response->watermarked;
-        $document->filename = $newFileName;
-        $document->save();
+        //Watermarking
+//        Watermarking::dispatch($document, $author);
         //Extract keyword
-        $this->extractKeywordService->prepareData($document);
-        $response = $this->extractKeywordService->sendRequest('POST');
-        $abstracts = collect($response->abstract);
-
-
+        ExtractKeywords::dispatch($document);
         return redirect(route('documents.index'));
     }
 
