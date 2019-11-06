@@ -72,7 +72,7 @@
                         <div class="row">
                             <div class="col-md-12 form-group">
 {{--                                <label for="m_people">Sub-major</label>--}}
-                                <select name="major_id" class="form-control" id="">
+                                <select name="major_id" class="form-control" id="profileDropdown">
                                     @foreach($majors as $major)
                                         <option value="{{$major->id}}" @if($student->major_id== $major->id) selected @endif>{{$major->name}}</option>
                                     @endforeach
@@ -114,7 +114,9 @@
 
                             </div>
                         </div>
-                        <p><a href="#" class="btn btn-outline-white btn-lg site-animate" style="text-align: right; margin-top: 20px !important; margin-left: 555px; ">Save</a></p>
+                        <div class = "editSaveButton">
+                            <p><a href="#" class="btn btn-outline-white btn-lg site-animate" >Save</a></p>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -9,15 +9,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
     <section class="site-section bg-light" id="section-contact">
         <div class="container">
             <div class="row">
@@ -32,9 +23,14 @@
                         @auth
                             @foreach($authors as $author)
                                 <p class="display-4">
+                                <div class = "documentHeaderName">
+                                    <span>Author:</span>
+                                </div>
+                                <div class = "documentHeaderValue">
                                     <a href="{{route('authors.show',['author' => $author->id])}}">
-                                        <span style="font-size: 30px">Author:</span><span style="font-size:30px">{{$author->name}}</span>
+                                        <span>{{$author->name}}</span>
                                     </a>
+                                </div>
                                 </p>
 
                             @endforeach
@@ -43,20 +39,36 @@
                         @guest
                             @foreach($authors as $author)
                                 <p class="display-4">
+                                <div class = "documentHeaderName">
+                                    <span>Author:</span>
+                                </div>
+                                <div class = "documentHeaderValue">
                                     <a href="{{route('authors.guestShow',['author' => $author->id])}}">
-                                        <span style="font-size: 30px">Author:</span><span style="font-size:30px">{{$author->name}}</span>
+                                        <span>{{$author->name}}</span>
                                     </a>
+                                </div>
                                 </p>
                             @endforeach
                         @endguest
 
 
-                        <p class="display-4"><span>Major:</span><span>{{$document->major->name}}</span></p>
-                        <p class="display-4"><span>Abstract</span></p>
+                        <p class="display-4">
+                        <div class = "documentHeaderName" style = "height: 60px;">
+                            <span>Major:</span>
+                        </div>
+                        <div class = "documentHeaderValue" style = "height: 60px;">
+                            <span>{{$document->major->name}}</span>
+                        </div>
+                        </p>
                     </div>
+                        <div class = "bookMarkButton">
+                            <span  class="mb-0" ><a href="{{route('hods.approve',['document' => $document->id])}}" class="btn btn-primary btn-lg">Approve PDF</a></span>
+                        </div>
 
 
-
+                </div>
+                <div class = "documentAbstract">
+                    <h3><span>Abstract</span></h3>
                 </div>
                 <p class="lead" id="individualabstract" style="text-align: justify !important;margin-left: 80px">
                     <span style="padding-left: 50px; padding-bottom: 15px">
@@ -64,9 +76,9 @@
                     </span>
                 </p>
 
-
-                <p  class="mb-0" ><a href="{{route('file.download',['name' => $document->filename])}}" class="btn btn-primary btn-lg">Download PDF</a></p>
-
+                <div class = "bookDownloadButton">
+                    <p  class="mb-0" ><a href="{{route('file.download',['name' => $document->filename])}}" class="btn btn-primary btn-lg">Download PDF</a></p>
+                </div>
                 <p class="display-4"><span style="font-size: 30px">Submission History</span></p>
                 @foreach($histories as $history)
                     <a href="">- {{$history->title}}</a>
@@ -74,15 +86,6 @@
 
                 <p class="display-4"><span style="font-size: 30px">Uploader</span></p>
                 <p>- {{$owner->name}}</p>
-{{--                @auth--}}
-{{--                    <a href="{{route('students.show',['student' => $document->owner_id])}}">- {{$owner->name}}</a>--}}
-
-{{--                @endauth--}}
-
-{{--                @guest--}}
-{{--                    <a href="{{route('students.guestShow',['student' => $document->owner_id])}}">- {{$owner->name}}</a>--}}
-{{--                @endguest--}}
-
             </div>
 
         </div>
@@ -126,7 +129,6 @@
 
 {{--                <p  class="mb-0" ><a href="{{route('file.download',['name' => $document->filename])}}" class="btn btn-primary btn-lg">Download PDF</a></p>--}}
 {{--                    @if(!$document->approved)--}}
-{{--                <p  class="mb-0" ><a href="{{route('hods.approve',['document' => $document->id])}}" class="btn btn-primary btn-lg">Approve PDF</a></p>--}}
 {{--                    @endif--}}
 {{--                <p class="lead">--}}
 {{--                <p style="font-size: 30px">Submission History</p>--}}

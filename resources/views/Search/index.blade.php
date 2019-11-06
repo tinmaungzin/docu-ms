@@ -12,12 +12,15 @@
     <section class="site-section bg-light" >
         <div class="container">
             <div class="row">
-
+                <div class = "searchTitle">
+                    <h2>Search Results</h2>
+                </div>
                     @foreach($documents as $document)
 
                         <div class="col-lg-3 col-md-6 col-sm-6" >
                             <div class="media d-block mb-4 text-center site-media site-animate">
                                 <div class = "indexThesis">
+
                                     <div class="media-body p-md-9 p-3" style="height: 380px">
                                         <div class = "indexThesisTitle">
                                             <h5 class="mt-0 h4">{{$document->title}}</h5>
