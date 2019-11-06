@@ -42,7 +42,11 @@ class ExtractKeywords implements ShouldQueue
         $keywordService->prepareData($this->document);
         $response = $keywordService->sendRequest('POST');
         $keywords = collect($response->abstract)->unique()->values()->take(10)->all();
-        dd($keywords);
+        foreach ($keywords as $keyword) {
+            $this->document->keywords()->create([
+                'name' => $keyword
+            ]);
+        }
 
     }
 }
