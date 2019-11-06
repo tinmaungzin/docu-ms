@@ -193,6 +193,16 @@
         </div>
         <div class = "signUpInputs">
             <div class = "signUpName">
+                Roll No
+            </div>
+            <div class = "signUpValue">
+                <input type = "text" name = "roll_no" placeholder = 'roll_no'>
+                <span>{{$errors->first('roll_no')}}</span>
+
+            </div>
+        </div>
+        <div class = "signUpInputs">
+            <div class = "signUpName">
                 Password
             </div>
             <div class = "signUpValue">
@@ -213,6 +223,9 @@
         </div>
         <div class = "signUpEnterButton">
             <button type = "submit" value = "enter">Sign Up</button>
+        </div>
+        <div class = "signUpButton">
+            <p>Already had an account? <a href = "#toLogIn">Log in</a> here</p>
         </div>
     </div>
 </div>

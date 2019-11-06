@@ -37,7 +37,7 @@
         @csrf
         <div class = "logInMainBody">
         <div class = "logInInputs">
-            <div class = "logInName">
+            <div class = "logInName" id = "logInInputs1">
                 School Mail
             </div>
             <div class = "logInValue">

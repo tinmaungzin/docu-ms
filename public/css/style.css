@@ -1,5 +1,5 @@
 html {
-    font-family:'Raleway', sans-serif;;
+    font-family:'Raleway', sans-serif;
     overflow-x: hidden;
 }
 
@@ -854,16 +854,16 @@ textarea.form-control {
     padding-left: 0 !important;
 }
 
-@media screen and (max-width: 960px) {
-    #reservationModal .modal-content .bg-image, #reservationModal .modal-content .site-cover {
-        height: 200px;
-        padding-right: 0 !important;
-        padding-left: 0 !important;
-        margin-left: 15px;
-        margin-right: 15px;
-        overflow: hidden;
-    }
-}
+/*@media screen and (max-width: 960px) {*/
+/*    #reservationModal .modal-content .bg-image, #reservationModal .modal-content .site-cover {*/
+/*        height: 200px;*/
+/*        padding-right: 0 !important;*/
+/*        padding-left: 0 !important;*/
+/*        margin-left: 15px;*/
+/*        margin-right: 15px;*/
+/*        overflow: hidden;*/
+/*    }*/
+/*}*/
 
 /*.image-popup {
   cursor: -webkit-zoom-in;
@@ -1153,7 +1153,7 @@ form{
     margin: 20px;
 }
 .logInTitle{
-    width: 200px;
+    width: 260px;
     float: left;
     overflow: hidden;
     margin-top: 15px;
@@ -1225,7 +1225,7 @@ form{
 }
 .signUpBody{
     width: 600px;
-    height: 820px;
+    height: 950px;
     background-color: white;
     margin-left: auto;
     margin-right: auto;
@@ -1318,21 +1318,18 @@ form{
 
 .bookDetailBody{
     width: 100%;
-    height: 150px;
+    height: 200px;
 }
 .bookDetails{
-    width: 20%;
-    margin-left: 85px;
+    width: 60%;
+    margin-left: 0px;
     float: left;
 }
 .bookDetails p{
     font-size: 20px;
 }
-
 .bookMarkButton{
-    width: 80%;
-}
-.bookMarkButton p{
+    width: 20%;
     margin-left: 850px;
 }
 .homeReadMore{
@@ -1350,65 +1347,126 @@ form{
 }
 .uploadMainBody{
     height: 200% !important;
-    background-color: grey !important;
+}
+.row h2{
+    text-align: center;
+}
+.documentHeaderName{
+    width: 60px;
+    float: left;
+}
+
+.documentAbstract{
+    margin-left: 80px;
+}
+.editSaveButton{
+    text-align: right;
+    margin-top: 20px !important;
+    margin-left: 555px;
+}
+.searchTitle{
+    width: 100%;
+    text-align: center;
+}
+.documentHeaderValue a{
+    color: #1a75ff;
+}
+.uploaderName a{
+    color: #1a75ff;
+}
+.documentHeaderValue a:hover{
+    color: #888888;
+}
+.uploaderName a:hover{
+    color: #888888;
 }
 @media screen and (max-width: 414px){
     html{
         /* background-color: none;*/
         height: 100%;
-        width: 100%
+        width: 100%;
     }
     .logInBody{
         width: 100%;
+        height: 100%;
+        margin: 0;
         border-radius: 0px;
         box-shadow: 0px 0px 0px 0px;
     }
+    .logInLogo{
+        margin-top: 30px;
+    }
+    .logInLogo img{
+        width: 80px;
+        height: 90px;
+    }
+    .logInTitle{
+        margin-top: 48px;
+        margin-left: 20px;
+    }
+    .logInTitle p{
+        font-size: 18px;
+    }
     .logInHeader{
-        margin-top: 140px;
+        margin-top: 0px;
+    }
+    .enterButton{
+        margin-top: 80px;
+    }
+    .logInInputs{
+        margin-top: 40px;
+    }
+    #logInInputs1{
+        margin-top: 80px;
     }
     span.navbar-brand{
         display: none !important;
     }
     input[type=search]{
-        width: 240px!important;
+        width: 300px!important;
         margin-top: 20px;
         margin-bottom: 10px;
     }
     .site-cover{
-        background-size: 100% 100%;
+        background-size: 100% 70%;
+    }
+    .site-vh-100 {
+        height: 60vh;
     }
     .site-cover .site-vh-100 {
-        min-height: 90px !important;
+        min-height: 50px !important;
         min-width: 100%;
     }
     #display4{
-        margin-left: 150px !important;
         font-size: 20px; /*Vission*/
     }
     #display5{
-        margin-left: 100px !important;
+
         font-size: 20px; /*Mission*/
     }
     #display6{
-        margin-left: 100px !important;
+
         font-size: 20px; /*Mission*/
     }
     .display-4 span{
-        margin-left: 40px !important;
+        width: 98%;
+        margin-left: 100px !important;
         font-size: 20px !important; /*research paper*/
     }
-    .mb-5 {
-        margin-bottom: 1rem!important;
-    }
-
+    /*.mb-5 {*/
+    /*    margin-bottom: 1rem!important;*/
+    /*}*/
+    /*.lead span{*/
+    /*    margin-left: 40px !important;*/
+    /*}*/
     .lead{
         font-size: 14px;
         width: 92% !important;
-        margin-left: -18px !important;
+        margin-left: -12px !important;
     }
-    .form-control{
-        width: 100%;
-    }
+    /*.form-control{*/
+    /*    width: 100%;*/
+    /*}*/
     /*.container-fluid{
       height: 0 !important;
     }*/
@@ -1422,24 +1480,26 @@ form{
         margin-left: 3px !important;
     }
     .signUpBody{
-        width:120%;
-        height: 120%;
+        width:100%;
         margin: 0px;
         border-radius: 0px;
         box-shadow: 0px 0px 0px 0px;
         margin-bottom: 0px;
     }
     .signUpValue input{
-        width: 400px;
+        width: 350px;
     }
-    #submajor{
-        width: 400px;
+    .row select{
+        width: 350px;
     }
-    #submajor1{
-        width: 385px;
-    }
+    /*#submajor{*/
+    /*    width: 400px;*/
+    /*}*/
+    /*#submajor1{*/
+    /*    width: 385px;*/
+    /*}*/
     .signUpEnterButton{
-        width: 400px;
+        width: 350px;
     }
     .signUpLogo{
         width:20%;
@@ -1449,7 +1509,7 @@ form{
         float: left;
     }
     .signUpTitle{
-        width:70%;
+        width:76%;
         float:left;
     }
     .navbar-brand{
@@ -1472,17 +1532,56 @@ form{
         padding-right: 30px;
         display:block;
     }
-
+    .documentAbstract{
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+    .editSaveButton{
+        text-align: center;
+        margin-top: 0px !important;
+        margin-left: 0px;
+    }
+    .editSaveButton a{
+        width: 100%;
+    }
+    #profileDropdown{
+        width: 385px;
+    }
+    .documentDetails a {
+        width: 100%;
+    }
+    .bookMarkButton{
+        width: 90%;
+        margin-left: 30px;
+        text-align: center;
+    }
+    .bookDetails{
+        width: 100%;
+    }
+    .bookDownloadButton{
+        text-align: center;
+    }
+    .row h2{
+        font-size: 14px;
+    }
 }
 @media screen and (max-width: 736px) and (min-width:415px){
     html{
         height: 100%;
+    }
+    .display-4 span{
+        width: 98%;
+        margin-left: -50px !important;
+        font-size: 20px !important; /*research paper*/
     }
     .logInBody{
         margin-top: 0px;
     }
     .logInHeader{
         margin-top: 0px;
+    }
+    .logInTitle{
+        margin-left: 20px;
     }
     .site-cover .site-vh-100 {
         max-height: 90px;
@@ -1495,34 +1594,11 @@ form{
     #site-navbar{
         background-color: rgb(115, 138, 109) !important;
     }
-    /*.signUpValue input{
-         width: 540px;
-        }
-        #submajor{
-          width: 400px;
-        }
-      .signUpEnterButton{
-        width: 400px;
-      }*/
+
 }
 
 @media screen and (max-width: 768px) and (min-width:737px){
-    html{
-        /*background-color: none;*/
 
-    }
-    /*input[type=search]{
-      width: 400px;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-    .site-cover{
-      background-size: 100% 100%;
-    }
-    .site-cover .site-vh-100 {
-    height: 90px !important;
-    min-width: 100%;
-    }*/
     .logInBody{
         margin-top: 285px;
     }

@@ -16,7 +16,7 @@
             <div class="row">
 
                 <div class="col-md-12  mb-5 site-animate">
-                    <h2 class="display-4" id="display4" style="padding-top: 1em; margin-left : 470px">System</h2>
+                    <h2 class="display-4" id="display4" style="padding-top: 1em;">System</h2>
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
             <div class="row">
 
                 <div class="col-md-12 mb-5 site-animate">
-                    <h2 class="display-4" id="display5" style="padding-top: 1em;margin-left : 350px">Terms & Conditions</h2>
+                    <h2 class="display-4" id="display5" style="padding-top: 1em;">Terms & Conditions</h2>
                 </div>
             </div>
 
@@ -48,7 +48,7 @@
             <div class="row">
 
                 <div class="col-md-12 mb-5 site-animate">
-                    <h2 class="display-4" id="display6" style="padding-top: 1em;margin-left : 350px">Development Team</h2>
+                    <h2 class="display-4" id="display6" style="padding-top: 1em;">Development Team</h2>
                 </div>
             </div>
 
