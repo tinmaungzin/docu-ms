@@ -37,9 +37,9 @@ class WatermarkService extends PythonService
 
     public function prepareData(Document $document, Author $author)
     {
-        $this->data = [
+        $this->data = collect([
             'authorname' => $author->name,
             'pdfpath'    => $document->filename
-        ];
+        ]);
     }
 }

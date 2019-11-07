@@ -22,9 +22,9 @@ class ExtractKeywordService extends PythonService
     public function prepareData(Document $document)
     {
 
-        $this->data = [
+        $this->data = collect([
             'title'    => $document->title,
             'abstract' => $document->abstract
-        ];
+        ]);
     }
 }

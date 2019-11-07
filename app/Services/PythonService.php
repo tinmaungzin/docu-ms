@@ -12,6 +12,12 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 
+
+/**
+ * Class PythonService
+ * @package App\Services
+ * @property Collection $data
+ */
 class PythonService
 {
     protected $client;
@@ -33,7 +39,11 @@ class PythonService
      */
     public function sendRequest($method)
     {
+        /**
+         *
+         */
         try {
+//            dd($this->data->toJson());
             $request = new Request($method, $this->url);
             $response = $this->client->send($request, [RequestOptions::JSON => $this->data]);
             $body = (string)$response->getBody();

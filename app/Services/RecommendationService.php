@@ -18,11 +18,11 @@ class RecommendationService extends PythonService
 
     public function prepareData(Document $document, $jsonFile, $abstract)
     {
-        $this->data = [
+        $this->data = collect([
             'book_id'   => $document->id,
             'title'     => $document->title,
             'abstract'  => $abstract,
             'json_file' => $jsonFile
-        ];
+        ]);
     }
 }
