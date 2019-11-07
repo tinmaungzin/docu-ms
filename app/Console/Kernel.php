@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('save:document')
-            ->daily()
+            ->cron('0 */2 * * *')
             ->timezone('Asia/Yangon');
     }
 
