@@ -21,6 +21,7 @@ class ExtractKeywordService extends PythonService
 
     public function prepareData(Document $document)
     {
+
         $this->data = [
             'title'    => $document->title,
             'abstract' => $document->abstract

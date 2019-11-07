@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\ExtractKeywords;
+use App\Jobs\RecommendationJob;
 use App\Jobs\Watermarking;
 use App\Models\Author;
 use App\Models\Bookmark;
@@ -15,7 +16,9 @@ use App\Models\Submajor;
 use App\Services\ExtractKeywordService;
 use App\Services\WatermarkService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
+use function GuzzleHttp\Psr7\str;
 
 class DocumentController extends Controller
 {
@@ -56,7 +59,6 @@ class DocumentController extends Controller
 //        dd($request->file('pdf_file'));
 
         $data = $request->except('pdf_file', 'author_name', 'author_mail');
-
         $data['filename'] = $this->saveFile($request->file('pdf_file'));
         $document = Document::create($data);
         $author = Author::where('mail', $request->author_mail)->first();
@@ -70,7 +72,7 @@ class DocumentController extends Controller
             $document->authors()->attach($author->id);
         }
         //Watermarking
-//        Watermarking::dispatch($document, $author);
+        Watermarking::dispatch($document, $author);
         //Extract keyword
         ExtractKeywords::dispatch($document);
         return redirect(route('documents.index'));
@@ -80,8 +82,9 @@ class DocumentController extends Controller
     {
         $randomNum = rand(10000, 99999) . '_' . time();
         $destinationPath = storage_path('pdf');
-        $fileName = $randomNum . '_' . $file->getClientOriginalName();
-//        dd($fileName, $destinationPath);
+        $fileName = $file->getClientOriginalName();
+        $fileName = urlencode($fileName);
+        $fileName = $randomNum . '_' . $fileName;
         $file->move($destinationPath, $fileName);
         return $fileName;
     }
@@ -91,12 +94,15 @@ class DocumentController extends Controller
         $id = Auth::user()->id;
         $auth_user = Student::find($id);
         $owner = Student::where('id', $document->owner_id)->firstOrFail();
+        $relatedDocs = $document->getRelatedDocuments();
+        $keywords = $document->keywords->pluck('name');
         $histories = $document->document_histories;
         $bookmark = $auth_user->bookmarks->where('document_id', $document->id);
         $authors = $document->authors;
         $major = $document->major;
         return view('Documents.show',
-            compact('document', 'owner', 'auth_user', 'histories', 'bookmark', 'authors', 'major'));
+            compact('document', 'owner', 'auth_user', 'histories', 'bookmark', 'authors', 'major', 'relatedDocs',
+                'keywords'));
     }
 
     public function guestShow(Document $document)

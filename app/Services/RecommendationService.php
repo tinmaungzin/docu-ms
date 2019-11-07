@@ -16,13 +16,13 @@ class RecommendationService extends PythonService
         $this->url = 'recommendation';
     }
 
-    public function prepareData(Document $document, $jsonFilePath)
+    public function prepareData(Document $document, $jsonFile, $abstract)
     {
         $this->data = [
-            'book_id' => $document->id,
-            'title'   => $document->title,
-            'abstract'
-
+            'book_id'   => $document->id,
+            'title'     => $document->title,
+            'abstract'  => $abstract,
+            'json_file' => $jsonFile
         ];
     }
 }

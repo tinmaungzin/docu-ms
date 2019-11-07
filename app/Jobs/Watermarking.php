@@ -10,6 +10,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\File;
 
 class Watermarking implements ShouldQueue
 {
@@ -43,12 +45,11 @@ class Watermarking implements ShouldQueue
          */
         //
 //        dd $this->document, $this->author);
+        if (!file_exists(Config::get('document.watermark_dir'))) {
+            File::makeDirectory(Config::get('document.watermark_dir'));
+        }
         $watermarkService = resolve(WatermarkService::class);
         $watermarkService->prepareData($this->document, $this->author);
         $response = $watermarkService->sendRequest('POST');
-        $newFileName = 'watermarked/' . $response->watermarked;
-        $this->document->filename = $newFileName;
-        $this->document->save();
-
     }
 }

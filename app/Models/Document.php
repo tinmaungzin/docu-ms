@@ -10,7 +10,8 @@ use Illuminate\Support\Collection;
  * @property string title
  * @property string abstract
  * @property string filename
- * @property mixed related
+ * @property Collection related
+ * @property Collection keywords
  * @method static find(int $id)
  * @method static chunk(int $chunk, $callback)
  */
@@ -57,8 +58,9 @@ class Document extends Model
     {
         $related_documents = collect();
         foreach ($this->related as $related_doc) {
-            $doc = Document::find($related_doc->related_document_id);
+            $doc = Document::with('authors')->find($related_doc->related_document_id);
             $related_documents->push($doc);
+
         }
         return $related_documents;
     }
