@@ -103,10 +103,15 @@ class DocumentController extends Controller
     {
         $id = Auth::user()->id;
         $auth_user = Student::find($id);
-        $major = $auth_user->major;
-        $submajors = $auth_user->major->submajors;
-        $authors = $document->authors;
-        return view('Documents.edit',compact('submajors','auth_user','major','document','authors'));
+        if($document->owner_id=== $auth_user->id){
+            $major = $auth_user->major;
+            $submajors = $auth_user->major->submajors;
+            $authors = $document->authors;
+            return view('Documents.edit',compact('submajors','auth_user','major','document','authors'));
+        }else{
+            return redirect(route('login'));
+        }
+
     }
 
     public function update(DocumentRequest $request, Document $document)
