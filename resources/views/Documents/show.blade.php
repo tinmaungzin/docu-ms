@@ -180,6 +180,9 @@
                                 <a href="{{route('students.guestShow',['student' => $document->owner_id])}}">- {{$owner->name}}</a>
                                 @endguest
                 </div>
+                <p class="display-4"><span style="font-size: 30px">Keywords</span></p>
+                <span style="background-color: #bdb9b7; padding: 3px;">convolution</span>
+
             </div>
 
         </div>
@@ -190,23 +193,23 @@
     <section class="bg-light" id="section_news">
         <div class="container">
             <p class="lead"><span style="font-size: 30px;padding-left:15px">Recommendation</span></p>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6" >
-                    <div class="media d-block mb-4 text-center site-media site-animate">
-                        <div class = "indexThesis">
-                            <div class="media-body p-md-9 p-3" style="height: 380px">
-                                <div class = "indexThesisTitle">
-                                    <h5 class="mt-0 h4">Chatbot using Deeplearning</h5>
-                                    <p class="mb-4">Nay Paing Soe</p>
-                                </div>
-                                <div class = "indexThesisButton">
-                                    <p class="mb-0"><a href="individualbookpage.html" class="btn btn-primary btn-sm">Read More</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-3 col-md-6 col-sm-6" >--}}
+{{--                    <div class="media d-block mb-4 text-center site-media site-animate">--}}
+{{--                        <div class = "indexThesis">--}}
+{{--                            <div class="media-body p-md-9 p-3" style="height: 380px">--}}
+{{--                                <div class = "indexThesisTitle">--}}
+{{--                                    <h5 class="mt-0 h4">Chatbot using Deeplearning</h5>--}}
+{{--                                    <p class="mb-4">Nay Paing Soe</p>--}}
+{{--                                </div>--}}
+{{--                                <div class = "indexThesisButton">--}}
+{{--                                    <p class="mb-0"><a href="individualbookpage.html" class="btn btn-primary btn-sm">Read More</a></p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </section>
 

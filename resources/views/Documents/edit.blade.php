@@ -151,7 +151,7 @@
     <div class = "uploadMainBody">
 
         <div class = "uploadHeader">
-            <h3>Upload PDF</h3>
+            <h3>Edit PDF</h3>
         </div>
 
 
@@ -169,7 +169,7 @@
                     <div class="row">
                         <div class="col-md-12 form-group">
                             <label for="m_message">Abstract</label>
-                            <textarea class="form-control" id="m_message" name="abstract" type="text" cols="30" rows="7">{{$document->abstract}}</textarea>
+                            <textarea class="form-control" id="m_message" name="abstract" type="text" cols="30" rows="12">{{$document->abstract}}</textarea>
                             <span>{{$errors->first('abstract')}}</span>
                         </div>
                     </div>
@@ -200,7 +200,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-md-6 form-group">
+                        <div style="margin-top: 33px;" class="col-md-6 form-group">
                             <input class="form-control" type="file" name="pdf_file">
                             <span>{{$errors->first('pdf_file')}}</span>
                         </div>
