@@ -186,6 +186,9 @@
                         <a href="{{route('students.guestShow',['student' => $document->owner_id])}}">- {{$owner->name}}</a>
                     @endguest
                 </div>
+                <p class="display-4"><span style="font-size: 30px">Keywords</span></p>
+                <span style="background-color: #bdb9b7; padding: 3px;">convolution</span>
+
             </div>
 
         </div>

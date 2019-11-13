@@ -225,7 +225,7 @@
             <button type = "submit" value = "enter">Sign Up</button>
         </div>
         <div class = "signUpButton">
-            <p>Already had an account? <a href = "#toLogIn">Log in</a> here</p>
+            <p>Already had an account? <a href = "{{route('login')}}">Log in</a> here</p>
         </div>
     </div>
 </div>

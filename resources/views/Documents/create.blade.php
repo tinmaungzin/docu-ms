@@ -177,7 +177,7 @@
 {{--                        <div class="col-md-6 form-group">--}}
 {{--                            <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Upload</a></p>--}}
 {{--                        </div>--}}
-                        <div class="col-md-6 form-group">
+                        <div style="margin-top: 33px;" class="col-md-6 form-group">
                             <input class="form-control" type="file" name="pdf_file">
                             <span>{{$errors->first('pdf_file')}}</span>
                         </div>

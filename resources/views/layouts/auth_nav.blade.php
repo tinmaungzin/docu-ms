@@ -83,8 +83,7 @@
                 </form>
             </div>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active" id="home1"><a href="{{route('documents.index')}}" class="nav-link">Home</a>
-                </li>
+                <li class="nav-item" id="home1"><a href="{{route('documents.index')}}" class="nav-link">Home</a></li>
                 @if($auth_user->type==='stu')
 
                     <li class="nav-item"><a href="{{route('info.about')}}" class="nav-link">About</a></li>

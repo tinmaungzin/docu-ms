@@ -21,7 +21,7 @@
             </div>
 
             <div class="col-md-12 site-animate" style="text-align: justify;margin-left: 20px ;">
-                <p class="lead" > <span style="padding-left: 50px;padding-bottom: 15px;">his system is a digital archive for Mandalay Technological Uniersity It is an integrated design project comprising many fields: information security, machine learning, natural language processing and networking. This system aims for the convenience of students from Mandalay Technological Uniersity to review the previous reseraches on a user friendly web application. It provides features like: Uploading research papers and thesis books by a registered user in the system, Adding digital watermark for every uploaded document to protect copy right, downloading the documents by every user visiting the website, Sending notifications to respective head of department in MTU for approval of uploaded document.</span></p>
+                <p class="lead" > <span style="padding-left: 50px;padding-bottom: 15px;">This system is a digital archive for Mandalay Technological Uniersity It is an integrated design project comprising many fields: information security, machine learning, natural language processing and networking. This system aims for the convenience of students from Mandalay Technological Uniersity to review the previous reseraches on a user friendly web application. It provides features like: Uploading research papers and thesis books by a registered user in the system, Adding digital watermark for every uploaded document to protect copy right, downloading the documents by every user visiting the website, Sending notifications to respective head of department in MTU for approval of uploaded document.</span></p>
             </div>
         </div>
     </section>
@@ -38,7 +38,7 @@
             </div>
 
             <div class="col-md-12 site-animate" style=" text-align: justify;margin-left: 20px ;">
-                <p class="lead"><span style="padding-left: 50px; padding-bottom: 15px"> This system can only be used for non-profit education purpose. A reserch paper or a thesis book can be uploaded only by a reserach student of MTU who is registered to the system.</span></p>
+                <p class="lead"><span style="padding-left: 50px; padding-bottom: 15px"> This system can only be used for non-profit education purpose. A reserch paper or a thesis book can be uploaded only by a research student of MTU who is registered to the system.</span></p>
             </div>
         </div>
     </section>
