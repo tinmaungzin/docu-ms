@@ -33,7 +33,7 @@
             <div class="row">
 
                 <div class="col-md-12 mb-5 site-animate">
-                    <h2 class="display-4" id="display5" style="padding-top: 1em;">Terms & Conditions</h2>
+                    <h2 class="display-4" id="display5" style="padding-top: 1em;">Terms and Conditions</h2>
                 </div>
             </div>
 

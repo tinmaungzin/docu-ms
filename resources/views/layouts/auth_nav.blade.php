@@ -90,16 +90,14 @@
                 @endif
                 @if($auth_user->type==='hod')
                     <li class="nav-item"><a href="{{route('info.hodAbout')}}" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="{{route('hods.show')}}" class="nav-link">Waiting List</a></li>
-                    <li class="nav-item"><a href="{{route('hods.list')}}" class="nav-link">Approved List</a></li>
+                    <li class="nav-item"><a href="{{route('hods.show')}}" class="nav-link">Pending</a></li>
+                    <li class="nav-item"><a href="{{route('hods.list')}}" class="nav-link">Approved</a></li>
                 @endif
                 <li class="nav-item">
                     <div class="dropdown ">
                         <button class="dropbtn">
-{{--                            <img  src="{{asset('images/profileicon.png')}} " style="width:25px;margin-left: -120px"/>--}}
                             <p style="margin-top: 0px;margin-left:20px;color:#fff;font-size:14px;text-align:left">
                                 {{$auth_user->name}}
-{{--                                <img src="{{asset('images/dropdown.png')}} " style="width: 10px; margin-top: 0.5%;margin-left: 7%;">--}}
                             </p>
                         </button>
                         <div class="dropdown-content">
