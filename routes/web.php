@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
     Route::resource('students','StudentController')->except('destroy');
     Route::get('documents','DocumentController@index')->name('documents.index');
-    Route::get('documents-guest','DocumentController@guestIndex')->name('documents.guestIndex');
+    Route::get('/','DocumentController@guestIndex')->name('documents.guestIndex');
     Route::get('documents/create','DocumentController@create')->name('documents.create');
     Route::get('documents/{document}/edit','DocumentController@edit')->name('documents.edit');
     Route::post('documents/{document}','DocumentController@update')->name('documents.update');
@@ -42,13 +42,3 @@ use Illuminate\Support\Facades\Route;
     Route::get('info/guestAbout','InfoController@guestAbout')->name('info.guestAbout');
     Route::get('info/hodAbout','InfoController@hodAbout')->name('info.hodAbout');
 
-//    Route::group(['middleware'=> 'typeCheck'], function (){
-//        Route::post('search','SearchController@index')->name('search.index');
-//        Route::post('guestSearch','SearchController@guestIndex')->name('search.guestIndex');
-//
-//    });
-
-
-//Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');

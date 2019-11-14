@@ -150,7 +150,7 @@
             </div>
             <div class = "signUpValue">
                 <input type = "text" name = "name" placeholder = " Name">
-                <span>{{$errors->first('name')}}</span>
+                <span style="color:red;">{{$errors->first('name')}}</span>
 
             </div>
 
@@ -177,7 +177,7 @@
             </div>
             <div class = "signUpValue">
                 <input type = "text" name = "student_id" placeholder = " Student ID">
-                <span>{{$errors->first('student_id')}}</span>
+                <span style="color: red;">{{$errors->first('student_id')}}</span>
 
             </div>
         </div>
@@ -187,7 +187,7 @@
             </div>
             <div class = "signUpValue">
                 <input type = "email" name = "school_mail" placeholder = " E-mail">
-                <span>{{$errors->first('school_mail')}}</span>
+                <span style="color: red;">{{$errors->first('school_mail')}}</span>
 
             </div>
         </div>
@@ -197,7 +197,7 @@
             </div>
             <div class = "signUpValue">
                 <input type = "text" name = "roll_no" placeholder = 'roll_no'>
-                <span>{{$errors->first('roll_no')}}</span>
+                <span style="color: red;">{{$errors->first('roll_no')}}</span>
 
             </div>
         </div>
@@ -207,7 +207,7 @@
             </div>
             <div class = "signUpValue">
                 <input type = "password" name = "password" placeholder = " Password">
-                <span>{{$errors->first('password')}}</span>
+                <span style="color: red;">{{$errors->first('password')}}</span>
 
             </div>
         </div>
@@ -217,7 +217,7 @@
             </div>
             <div class = "signUpValue">
                 <input type = "password" name = "confirm_password" placeholder = " Password">
-                <span>{{$errors->first('confirm_password')}}</span>
+                <span style="color: red;">{{$errors->first('confirm_password')}}</span>
 
             </div>
         </div>
