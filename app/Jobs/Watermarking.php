@@ -44,7 +44,6 @@ class Watermarking implements ShouldQueue
          * @var WatermarkService $watermarkService
          */
         //
-//        dd $this->document, $this->author);
         if (!file_exists(Config::get('document.watermark_dir'))) {
             File::makeDirectory(Config::get('document.watermark_dir'));
         }
