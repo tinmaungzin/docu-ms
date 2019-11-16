@@ -1,1 +1,1 @@
-[{"book_id":1,"title":"Testing update","abstract":[]},{"book_id":2,"title":"Testing update","abstract":["deploy","keys","read","access","key","ssh","server","grants","single","github"]}]
+[{"book_id":1,"title":"Testing update","abstract":[]},{"book_id":2,"title":"Testing update","abstract":["deploy","keys","read","access","key","ssh","server","grants","single","github"]},{"book_id":3,"title":"Upload from bob","abstract":[]},{"book_id":4,"title":"Upload from bob","abstract":["controllers","middleware","closure","convenient","way","single","controller","entire","class"]}]

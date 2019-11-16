@@ -43,6 +43,10 @@ class SearchController extends Controller
                 $query = explode(' ', $query);
                 $q->whereIn('name', $query);
             })->where('approved', true);
+        })->orWhere(function ($q) use ($query) {
+            $q->whereHas('authors', function ($q) use ($query) {
+                $q->where('name', 'like', '%' . $query . '%');
+            });
         })->get();
     }
 }
