@@ -29,15 +29,15 @@ class DocumentController extends Controller
     {
         $this->watermarkService = $watermarkService;
         $this->extractKeywordService = $extractKeywordService;
-        $this->middleware('auth:stu', ['except' => ['guestIndex', 'guestShow', 'show']]);
+        $this->middleware('auth:stu', ['except' => ['guestIndex', 'guestShow', 'show','index']]);
     }
 
     public function index()
     {
-        $id = Auth::user()->id;
-        $auth_user = Student::find($id);
+//        $id = Auth::user()->id;
+//        $auth_user = Student::find($id);
         $documents = Document::where('approved', true)->paginate(8);
-        return view('Documents.index', compact('documents', 'auth_user'));
+        return view('Documents.index', compact('documents'));
     }
 
     public function guestIndex()
