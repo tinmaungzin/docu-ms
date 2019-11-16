@@ -10,7 +10,7 @@ class LoginController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest:stu',['except' => 'logout']);
+        $this->middleware('guest:stu', ['except' => 'logout']);
     }
 
     public function showLoginForm()
@@ -20,26 +20,25 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $credentials =$request->validate([
-            'school_mail'=> 'required|email|ends_with:mtu.edu.mm',
-            'password'=> 'required'
+        $credentials = $request->validate([
+            'school_mail' => 'required|email|ends_with:mtu.edu.mm',
+            'password'    => 'required'
         ]);
         if (Auth::guard('stu')->attempt($credentials)) {
             return redirect('documents');
 
-        }
-        elseif(Auth::guard('hod')->attempt($credentials)){
+        } elseif (Auth::guard('hod')->attempt($credentials)) {
 
             return redirect(route('hods.show'));
-        }
-        else{
-            return redirect('login')->withErrors(['password'=> 'Email or Password incorrect!']);
+        } else {
+            return redirect('login')->withErrors(['password' => 'Email or Password incorrect!']);
         }
     }
 
     public function logout()
     {
         Auth::guard('stu')->logout();
-        return redirect('documents-guest');
+        Auth::guard('hod')->logout();
+        return redirect('/');
     }
 }

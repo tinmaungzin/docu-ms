@@ -95,17 +95,22 @@ class DocumentController extends Controller
 
     public function show(Document $document)
     {
-        $id = Auth::user()->id;
-        $auth_user = Student::find($id);
+//        dd(Auth::guard('stu')->user());
+//        $id = Auth::user()->id;
+//        $auth_user = Student::find($id);
         $owner = Student::where('id', $document->owner_id)->firstOrFail();
         $relatedDocs = $document->getRelatedDocuments();
         $keywords = $document->keywords->pluck('name');
         $histories = $document->document_histories;
-        $bookmark = $auth_user->bookmarks->where('document_id', $document->id);
+        if ($this->stuAuth()->user()) {
+            $bookmark = $this->stuAuth()->user()->bookmarks->where('document_id', $document->id);
+        } else {
+            $bookmark = [];
+        }
         $authors = $document->authors;
         $major = $document->major;
         return view('Documents.show',
-            compact('document', 'owner', 'auth_user', 'histories', 'bookmark', 'authors', 'major', 'relatedDocs',
+            compact('document', 'owner', 'histories', 'bookmark', 'authors', 'major', 'relatedDocs',
                 'keywords'));
     }
 
@@ -181,5 +186,8 @@ class DocumentController extends Controller
         return redirect(route('documents.show', ['document' => $document->id]));
     }
 
+    public function stuAuth(){
+        return Auth::guard('stu');
+    }
 
 }

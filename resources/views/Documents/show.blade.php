@@ -24,21 +24,19 @@
             <div class="col-md-12 site-animate">
                 <div class="bookDetailBody">
                     <div class="bookDetails">
-                            @foreach($authors as $author)
-                                <p class="display-4">
-                                <div class="documentHeaderName">
-                                    <span>Author:</span>
-                                </div>
-                                <div class="documentHeaderValue">
-                                    <a href="{{route('authors.show',['author' => $author->id])}}">
-                                        <span>{{$author->name}}</span>
-                                    </a>
-                                </div>
-                                </p>
+                        @foreach($authors as $author)
+                            <p class="display-4">
+                            <div class="documentHeaderName">
+                                <span>Author:</span>
+                            </div>
+                            <div class="documentHeaderValue">
+                                <a href="{{route('authors.show',['author' => $author->id])}}">
+                                    <span>{{$author->name}}</span>
+                                </a>
+                            </div>
+                            </p>
 
-                            @endforeach
-
-
+                        @endforeach
 
 
                         <p class="display-4">
@@ -53,24 +51,24 @@
                     </div>
 
 
-                    @auth
-                        @if(\Illuminate\Support\Facades\Auth::user()->id!= $document->owner_id)
+                    @if(\Illuminate\Support\Facades\Auth::guard('stu')->check())
+                        @if(\Illuminate\Support\Facades\Auth::guard('stu')->user()->id!= $document->owner_id)
                             @if($bookmark->count()>0)
                                 <div class="bookMarkButton">
                                     <span class="mb-0"><a
-                                            href="{{route('bookmark.index',['student' => \Illuminate\Support\Facades\Auth::user()->id ,'document' => $document->id])}}"
+                                            href="{{route('bookmark.index',['student' => \Illuminate\Support\Facades\Auth::guard('stu')->user()->id ,'document' => $document->id])}}"
                                             class="btn btn-primary btn-lg"
                                             style="background-color: white; color:black ">Bookmarked</a></span>
                                 </div>
                             @else
                                 <div class="bookMarkButton">
                                     <span class="mb-0"><a
-                                            href="{{route('bookmark.index',['student' => \Illuminate\Support\Facades\Auth::user()->id ,'document' => $document->id])}}"
+                                            href="{{route('bookmark.index',['student' => \Illuminate\Support\Facades\Auth::guard('stu')->user()->id ,'document' => $document->id])}}"
                                             class="btn btn-primary btn-lg">Bookmark</a></span>
                                 </div>
                             @endif
                         @endif
-                    @endauth
+                    @endif
                 </div>
                 <div class="documentAbstract">
                     <h3><span>Abstract</span></h3>
@@ -84,12 +82,12 @@
                 <div class="documentDetails">
                     <p class="mb-0"><a href="{{route('file.download',['name' => $document->filename])}}"
                                        class="btn btn-primary btn-lg">Download PDF</a></p>
-                    @auth
-                        @if(\Illuminate\Support\Facades\Auth::user()->id== $document->owner_id)
+                    @if(\Illuminate\Support\Facades\Auth::guard('stu')->check())
+                        @if(\Illuminate\Support\Facades\Auth::guard('stu')->user()->id== $document->owner_id)
                             <p class="mb-0"><a href="{{route('documents.edit',['document' => $document->id])}}"
                                                class="btn btn-primary btn-lg">Edit Document</a></p>
                         @endif
-                    @endauth
+                    @endif
                 </div>
                 <p class="display-4"><span style="font-size: 30px">Submission History</span></p>
                 @foreach($histories as $history)
@@ -98,7 +96,7 @@
 
                 <div class="uploaderName">
                     <p class="display-4"><span style="font-size: 30px">Uploader</span></p>
-                        <a href="{{route('students.show',['student' => $document->owner_id])}}">- {{$owner->name}}</a>
+                    <a href="{{route('students.show',['student' => $document->owner_id])}}">- {{$owner->name}}</a>
                 </div>
                 <p class="display-4"><span style="font-size: 30px">Keywords</span></p>
                 @foreach($keywords as $keyword)
