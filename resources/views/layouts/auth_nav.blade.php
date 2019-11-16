@@ -1,9 +1,12 @@
 
+
 <nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
     <div class="container">
-        <a  href="index.html"><img src=" {{asset('images/MTU_logo.png')}} " style="width: 60px;height: 70px;margin-right: 30px;"> </a>
+        <a href="index.html"><img src=" {{asset('images/MTU_logo.png')}} "
+                                  style="width: 60px;height: 70px;margin-right: 30px;"> </a>
         <span class="navbar-brand">MTU</span>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav"
+                aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
 
@@ -11,13 +14,15 @@
             <div>
                 <form class="search" action="{{route('search.index')}}" method="post">
                     @csrf
-                    <input  id="search" type="search" value="{{old('query')}}"  placeholder="Search" name="query" onkeypress="if(event.key === 'Enter') searchHandler(event)" >
+                    <input id="search" type="search" value="{{old('query')}}" placeholder="Search" name="query"
+                           onkeypress="if(event.key === 'Enter') searchHandler(event)">
                     <br/>
                 </form>
             </div>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item" id="home1"><a href="{{route('documents.index')}}" class="nav-link">Home</a></li>
                 @if($auth_user->type==='stu')
+
                     <li class="nav-item"><a href="{{route('info.about')}}" class="nav-link">About</a></li>
                 @endif
                 @if($auth_user->type==='hod')
