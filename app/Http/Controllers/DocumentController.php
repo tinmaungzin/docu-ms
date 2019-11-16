@@ -28,7 +28,7 @@ class DocumentController extends Controller
     {
         $this->watermarkService = $watermarkService;
         $this->extractKeywordService = $extractKeywordService;
-        $this->middleware('auth:stu', ['except' => ['guestIndex', 'guestShow']]);
+        $this->middleware('auth:stu', ['except' => ['guestIndex', 'guestShow','show']]);
     }
 
     public function index()
