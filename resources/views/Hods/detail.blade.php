@@ -61,10 +61,11 @@
                         </div>
                         </p>
                     </div>
+                    @if(!($document->approved))
                         <div class = "bookMarkButton">
                             <span  class="mb-0" ><a href="{{route('hods.approve',['document' => $document->id])}}" class="btn btn-primary btn-lg">Approve PDF</a></span>
                         </div>
-
+                    @endif
 
                 </div>
                 <div class = "documentAbstract">
