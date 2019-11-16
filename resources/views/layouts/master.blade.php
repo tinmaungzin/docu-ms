@@ -17,13 +17,7 @@
     <link rel="stylesheet" href=" {{asset('css/style.css')}} ">
 </head>
 <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
-{{--        @auth--}}
-{{--            @include('layouts.auth_nav')--}}
-{{--        @endauth--}}
 
-{{--        @guest--}}
-{{--            @include('layouts.guest_nav')--}}
-{{--        @endguest--}}
 @include('layouts.nav')
 @yield('content')
 @include('layouts.footer')

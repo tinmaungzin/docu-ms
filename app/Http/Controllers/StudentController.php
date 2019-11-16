@@ -96,7 +96,10 @@ class StudentController extends Controller
         $majors = Major::all();
         $id = Auth::user()->id;
         $auth_user = Student::find($id);
-        return view('Students.edit', compact('student','majors','bookmarkeds','auth_user'));
+        $approved_books = $student->documents->where('approved',1);
+        $pending_books = $student->documents->where('approved',0);
+//        dd($pending_books);
+        return view('Students.edit', compact('student','majors','bookmarkeds','auth_user','approved_books','pending_books'));
     }
 
     /**

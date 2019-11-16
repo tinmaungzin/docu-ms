@@ -18,7 +18,7 @@ use App\Services\WatermarkService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
-use function GuzzleHttp\Psr7\str;
+use Illuminate\Support\Facades\Session;
 
 class DocumentController extends Controller
 {
@@ -28,7 +28,7 @@ class DocumentController extends Controller
     {
         $this->watermarkService = $watermarkService;
         $this->extractKeywordService = $extractKeywordService;
-        $this->middleware('auth:stu', ['except' => ['guestIndex', 'guestShow','show']]);
+        $this->middleware('auth:stu', ['except' => ['guestIndex', 'guestShow', 'show']]);
     }
 
     public function index()
@@ -58,6 +58,7 @@ class DocumentController extends Controller
     {
 //        dd($request->file('pdf_file'));
 
+
         $data = $request->except('pdf_file', 'author_name', 'author_mail');
         $data['filename'] = $this->saveFile($request->file('pdf_file'));
         $document = Document::create($data);
@@ -75,7 +76,8 @@ class DocumentController extends Controller
         Watermarking::dispatch($document, $author);
         //Extract keyword
         ExtractKeywords::dispatch($document);
-        return redirect(route('documents.index'));
+        Session::flash('msg', 'Document created Successfully but please wait for HOD to approve it!');
+        return redirect(route('documents.show', ['document' => $document->id]));
     }
 
     public function saveFile($file)
@@ -159,6 +161,7 @@ class DocumentController extends Controller
         if ($author->count() > 0) {
             $document->authors()->detach();
             $document->authors()->attach($author[0]->id);
+            $author = $author[0];
         } else {
             $author = new Author();
             $author->name = $request->author_name;
@@ -167,6 +170,11 @@ class DocumentController extends Controller
             $document->authors()->detach();
             $document->authors()->attach($author->id);
         }
+        //Watermarking
+        Watermarking::dispatch($document, $author);
+        //Extract keyword
+//        ExtractKeywords::dispatch($document);
+        Session::flash('msg', 'Document updated Successfully!');
         return redirect(route('documents.show', ['document' => $document->id]));
     }
 
