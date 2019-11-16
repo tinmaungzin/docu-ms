@@ -1,5 +1,4 @@
 
-
 <nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
     <div class="container">
         <a href="index.html"><img src=" {{asset('images/MTU_logo.png')}} "

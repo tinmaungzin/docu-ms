@@ -29,7 +29,7 @@ class DocumentController extends Controller
     {
         $this->watermarkService = $watermarkService;
         $this->extractKeywordService = $extractKeywordService;
-        $this->middleware('auth:stu', ['except' => ['guestIndex', 'guestShow']]);
+        $this->middleware('auth:stu', ['except' => ['guestIndex', 'guestShow', 'show']]);
     }
 
     public function index()
@@ -79,7 +79,6 @@ class DocumentController extends Controller
         ExtractKeywords::dispatch($document);
         Session::flash('msg', 'Document created Successfully but please wait for HOD to approve it!');
         return redirect(route('documents.show', ['document' => $document->id]));
-
 
     }
 
@@ -164,6 +163,7 @@ class DocumentController extends Controller
         if ($author->count() > 0) {
             $document->authors()->detach();
             $document->authors()->attach($author[0]->id);
+            $author = $author[0];
         } else {
             $author = new Author();
             $author->name = $request->author_name;
@@ -172,9 +172,13 @@ class DocumentController extends Controller
             $document->authors()->detach();
             $document->authors()->attach($author->id);
         }
+
+        //Watermarking
+        Watermarking::dispatch($document, $author);
+        //Extract keyword
+//        ExtractKeywords::dispatch($document);
         Session::flash('msg', 'Document updated Successfully!');
         return redirect(route('documents.show', ['document' => $document->id]));
-
     }
 
 

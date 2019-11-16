@@ -24,7 +24,6 @@
             <div class="col-md-12 site-animate">
                 <div class="bookDetailBody">
                     <div class="bookDetails">
-                        @auth
                             @foreach($authors as $author)
                                 <p class="display-4">
                                 <div class="documentHeaderName">
@@ -38,22 +37,8 @@
                                 </p>
 
                             @endforeach
-                        @endauth
 
-                        @guest
-                            @foreach($authors as $author)
-                                <p class="display-4">
-                                <div class="documentHeaderName">
-                                    <span>Author:</span>
-                                </div>
-                                <div class="documentHeaderValue">
-                                    <a href="{{route('authors.guestShow',['author' => $author->id])}}">
-                                        <span>{{$author->name}}</span>
-                                    </a>
-                                </div>
-                                </p>
-                            @endforeach
-                        @endguest
+
 
 
                         <p class="display-4">
@@ -113,18 +98,12 @@
 
                 <div class="uploaderName">
                     <p class="display-4"><span style="font-size: 30px">Uploader</span></p>
-                    @auth
                         <a href="{{route('students.show',['student' => $document->owner_id])}}">- {{$owner->name}}</a>
-
-                    @endauth
-
-                    @guest
-                        <a href="{{route('students.guestShow',['student' => $document->owner_id])}}">- {{$owner->name}}</a>
-                    @endguest
                 </div>
                 <p class="display-4"><span style="font-size: 30px">Keywords</span></p>
-                <span style="background-color: #bdb9b7; padding: 3px;">convolution</span>
-
+                @foreach($keywords as $keyword)
+                    <span style="background-color: #bdb9b7; padding: 3px;">{{ $keyword }}</span>
+                @endforeach
             </div>
 
         </div>

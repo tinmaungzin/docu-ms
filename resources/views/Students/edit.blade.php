@@ -110,20 +110,12 @@
                                             <h5 class="mt-0 h4">{{$bookmarked->title}}</h5>
                                             {{--                                        <p class="mb-4">Nay Paing Soe</p>--}}
                                         </div>
-                                        @auth
                                             <div class = "indexThesisButton">
                                                 <p class="mb-0">
                                                     <a href="{{route('documents.show',['document' => $bookmarked->id])}}" class="btn btn-primary btn-sm">Read More</a>
                                                 </p>
                                             </div>
-                                        @endauth
-                                        @guest
-                                            <div class = "indexThesisButton">
-                                                <p class="mb-0">
-                                                    <a href="{{route('documents.guestShow',['document' => $bookmarked->id])}}" class="btn btn-primary btn-sm">Read More</a>
-                                                </p>
-                                            </div>
-                                        @endguest
+
                                     </div>
                                 </div>
                             </div>
@@ -143,20 +135,12 @@
                                         <h5 class="mt-0 h4">{{$approved_book->title}}</h5>
                                         {{--                                        <p class="mb-4">Nay Paing Soe</p>--}}
                                     </div>
-                                    @auth
                                         <div class = "indexThesisButton">
                                             <p class="mb-0">
                                                 <a href="{{route('documents.show',['document' => $approved_book->id])}}" class="btn btn-primary btn-sm">Read More</a>
                                             </p>
                                         </div>
-                                    @endauth
-                                    @guest
-                                        <div class = "indexThesisButton">
-                                            <p class="mb-0">
-                                                <a href="{{route('documents.guestShow',['document' => $approved_book->id])}}" class="btn btn-primary btn-sm">Read More</a>
-                                            </p>
-                                        </div>
-                                    @endguest
+
                                 </div>
                             </div>
                         </div>
@@ -176,20 +160,12 @@
                                         <h5 class="mt-0 h4">{{$pending_book->title}}</h5>
                                         {{--                                        <p class="mb-4">Nay Paing Soe</p>--}}
                                     </div>
-                                    @auth
                                         <div class = "indexThesisButton">
                                             <p class="mb-0">
                                                 <a href="{{route('documents.show',['document' => $pending_book->id])}}" class="btn btn-primary btn-sm">Read More</a>
                                             </p>
                                         </div>
-                                    @endauth
-                                    @guest
-                                        <div class = "indexThesisButton">
-                                            <p class="mb-0">
-                                                <a href="{{route('documents.guestShow',['document' => $pending_book->id])}}" class="btn btn-primary btn-sm">Read More</a>
-                                            </p>
-                                        </div>
-                                    @endguest
+
                                 </div>
                             </div>
                         </div>

@@ -50,20 +50,12 @@
                                         <h5 class="mt-0 h4">{{$document->title}}</h5>
                                         {{--                                        <p class="mb-4">Nay Paing Soe</p>--}}
                                     </div>
-                                    @auth
                                         <div class = "indexThesisButton">
                                             <p class="mb-0">
                                                 <a href="{{route('documents.show',['document' => $document->id])}}" class="btn btn-primary btn-sm">Read More</a>
                                             </p>
                                         </div>
-                                    @endauth
-                                    @guest
-                                        <div class = "indexThesisButton">
-                                            <p class="mb-0">
-                                                <a href="{{route('documents.guestShow',['document' => $document->id])}}" class="btn btn-primary btn-sm">Read More</a>
-                                            </p>
-                                        </div>
-                                    @endguest
+
                                 </div>
                             </div>
                         </div>
