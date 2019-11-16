@@ -7,6 +7,12 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('guest:stu',['except' => 'logout']);
+    }
+
     public function showLoginForm()
     {
         return view('Login.login');
@@ -18,8 +24,9 @@ class LoginController extends Controller
             'school_mail'=> 'required|email|ends_with:mtu.edu.mm',
             'password'=> 'required'
         ]);
-        if(Auth::guard('stu')->attempt($credentials)){
+        if (Auth::guard('stu')->attempt($credentials)) {
             return redirect('documents');
+
         }
         elseif(Auth::guard('hod')->attempt($credentials)){
 
@@ -29,6 +36,7 @@ class LoginController extends Controller
             return redirect('login')->withErrors(['password'=> 'Email or Password incorrect!']);
         }
     }
+
     public function logout()
     {
         Auth::guard('stu')->logout();
