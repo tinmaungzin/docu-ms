@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Submajor;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SubmajorsSeeder extends Seeder
 {
@@ -11,24 +13,35 @@ class SubmajorsSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Submajor::create([
-           'name' => 'Networking',
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Submajor::query()->truncate();
+
+        Submajor::create([
+            'name'     => 'Networking',
             'major_id' => 3
         ]);
-        \App\Models\Submajor::create([
-            'name' => 'IOT',
+        Submajor::create([
+            'name'     => 'IOT',
             'major_id' => 3
 
         ]);
-        \App\Models\Submajor::create([
-            'name' => 'Big Data and Cloud',
+        Submajor::create([
+            'name'     => 'Big Data and Cloud',
             'major_id' => 3
 
         ]);
-        \App\Models\Submajor::create([
-            'name' => 'Security',
+        Submajor::create([
+            'name'     => 'Security',
             'major_id' => 3
-
         ]);
+        Submajor::create([
+            'name'     => 'Artificial Intelligence and Data Science',
+            'major_id' => 3
+        ]);
+        Submajor::create([
+            'name'     => 'Image Processing',
+            'major_id' => 3
+        ]);
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

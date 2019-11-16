@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Student;
 use Illuminate\Database\Seeder;
 
 class StudentsSeeder extends Seeder
@@ -12,14 +13,14 @@ class StudentsSeeder extends Seeder
     public function run()
     {
         //
-        \App\Models\Student::create([
-            'name' => 'Bob Marley',
+        Student::create([
+            'name'        => 'Bob Marley',
             'school_mail' => 'bobmarley@mtu.edu.mm',
-            'password' => bcrypt('password'),
-            'student_id' => 'MTU-1995',
-            'type' => 'stu',
-            'major_id' => 1,
-            'roll_no' => 17
+            'password'    => bcrypt('password'),
+            'student_id'  => 'MTU-1995',
+            'type'        => 'stu',
+            'major_id'    => 1,
+            'roll_no'     => 17
         ]);
     }
 }

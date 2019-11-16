@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Hod;
 use Illuminate\Database\Seeder;
 
 class HodsTableSeeder extends Seeder
@@ -11,7 +12,9 @@ class HodsTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Hod::create([
+        Hod::query()->truncate();
+
+        Hod::create([
 
             'name' => 'hod_ceit',
             'school_mail' => 'hod@mtu.edu.mm',
