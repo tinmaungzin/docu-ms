@@ -7,6 +7,7 @@ use App\Models\Hod;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class HodController extends Controller
 {
@@ -40,6 +41,7 @@ class HodController extends Controller
     {
         $document->approved= true;
         $document->save();
+        Session::flash('msg', $document->title.' is approved Successfully!');
         return redirect(route('hods.list'));
     }
 

@@ -1,70 +1,3 @@
-{{--<html>--}}
-{{--<body>--}}
-{{--<header>--}}
-
-{{--    @auth--}}
-{{--           @include('layouts.auth_nav')--}}
-{{--        @endauth--}}
-
-{{--    @guest--}}
-{{--           @include('layouts.guest_nav')--}}
-{{--        @endguest--}}
-
-{{--</header>--}}
-
-{{--    <p>Title - {{$document->title}}</p>--}}
-{{--    <p>Abstract - {{$document->abstract}}</p>--}}
-{{--    <p>Edit History</p>--}}
-{{--@foreach($histories as $history)--}}
-{{--    <a href="">{{$history->title}}</a>--}}
-{{--    @endforeach--}}
-
-{{--<br>--}}
-{{--@auth--}}
-{{--    @if(\Illuminate\Support\Facades\Auth::user()->id== $document->owner_id)--}}
-{{--        <a href="{{route('documents.edit',['document' => $document->id])}}">Edit Document</a>--}}
-{{--        @endif--}}
-
-{{--    @endauth--}}
-{{--@auth--}}
-{{--    @if(\Illuminate\Support\Facades\Auth::user()->id!= $document->owner_id)--}}
-{{--        @if($bookmark->count()>0)--}}
-{{--        <a href="{{route('bookmark.index',['student' => \Illuminate\Support\Facades\Auth::user()->id ,'document' => $document->id])}}">UnBOOkmark</a>--}}
-{{--            @else--}}
-{{--            <a href="{{route('bookmark.index',['student' => \Illuminate\Support\Facades\Auth::user()->id ,'document' => $document->id])}}">Bookmark</a>--}}
-{{--                @endif--}}
-{{--        @endif--}}
-{{--    @endauth--}}
-{{--<br>--}}
-
-{{--@auth--}}
-{{--@foreach($authors as $author)--}}
-{{--    <a href="{{route('authors.show',['author' => $author->id])}}">Author - {{$author->name}}</a>--}}
-{{--    <br>--}}
-{{--    @endforeach--}}
-{{--@endauth--}}
-
-{{--@guest--}}
-{{--    @foreach($authors as $author)--}}
-{{--        <a href="{{route('authors.guestShow',['author' => $author->id])}}">Author - {{$author->name}}</a>--}}
-{{--        <br>--}}
-{{--    @endforeach--}}
-{{--    @endguest--}}
-{{--@auth--}}
-{{--    <a href="{{route('students.show',['student' => $document->owner_id])}}">Uploader - {{$owner->name}}</a>--}}
-{{--    <br>--}}
-
-{{--@endauth--}}
-
-{{--@guest--}}
-{{--    <a href="{{route('students.guestShow',['student' => $document->owner_id])}}">Uploader - {{$owner->name}}</a>--}}
-{{--    <br>--}}
-{{--@endguest--}}
-{{--    <a href="{{route('file.download',['name' => $document->filename])}}">Download</a>--}}
-
-{{--</body>--}}
-{{--</html>--}}
-
 @extends('layouts.master')
 @section('content')
 
@@ -79,6 +12,9 @@
 
     <section class="site-section bg-light" id="section-contact">
         <div class="container">
+            @if(Session::has('msg'))
+                <p style="text-align: center;" class="alert-success">{{ Session::get('msg') }}</p>
+            @endif
             <div class="row">
                 <div class="col-md-12 text-center mb-5 site-animate">
                     <h2 class="display-4"><span style="padding-top: 1em">{{$document->title}}</span></h2>
@@ -193,23 +129,6 @@
     <section class="bg-light" id="section_news">
         <div class="container">
             <p class="lead"><span style="font-size: 30px;padding-left:15px">Recommendation</span></p>
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-3 col-md-6 col-sm-6" >--}}
-{{--                    <div class="media d-block mb-4 text-center site-media site-animate">--}}
-{{--                        <div class = "indexThesis">--}}
-{{--                            <div class="media-body p-md-9 p-3" style="height: 380px">--}}
-{{--                                <div class = "indexThesisTitle">--}}
-{{--                                    <h5 class="mt-0 h4">Chatbot using Deeplearning</h5>--}}
-{{--                                    <p class="mb-4">Nay Paing Soe</p>--}}
-{{--                                </div>--}}
-{{--                                <div class = "indexThesisButton">--}}
-{{--                                    <p class="mb-0"><a href="individualbookpage.html" class="btn btn-primary btn-sm">Read More</a></p>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
         </div>
     </section>
 

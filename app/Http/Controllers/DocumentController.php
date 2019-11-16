@@ -12,6 +12,7 @@ use App\Models\Student;
 use App\Models\Submajor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class DocumentController extends Controller
 {
@@ -47,12 +48,6 @@ class DocumentController extends Controller
     {
 
         $data = $request->except('pdf_file','author_name','author_mail');
-//        dd($request->pdf_file->getMimeType());
-//        if($request->pdf_file->getMimeType()=='application/pdf'){
-//            $data['filename'] = $this->saveFile($request->file('pdf_file'));
-//        }
-
-
         $data['filename'] = $this->saveFile($request->file('pdf_file'));
         $document = Document::create($data);
         $author = Author::where('mail', $request->author_mail)->get();
@@ -65,7 +60,8 @@ class DocumentController extends Controller
             $author->save();
             $document->authors()->attach($author->id);
         }
-        return redirect(route('documents.index'));
+        Session::flash('msg', 'Document created Successfully but please wait for HOD to approve it!');
+        return redirect(route('documents.show',['document'=> $document->id]));
     }
 
     public function saveFile($file)
@@ -151,6 +147,7 @@ class DocumentController extends Controller
             $document->authors()->detach();
             $document->authors()->attach($author->id);
         }
+        Session::flash('msg', 'Document updated Successfully!');
         return redirect(route('documents.show',['document' => $document->id]));
     }
 
